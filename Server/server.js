@@ -8,7 +8,7 @@ app.use('/',index);
 
 app.all('*',
   function (req, res) {
-    res.status(404).send('<h1> 404 Error </h1>');
+    res.status(404).sendFile(__dirname + '/html/404.html');
   }
 );
 
