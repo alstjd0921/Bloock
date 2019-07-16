@@ -8,7 +8,7 @@ app.use('/',index);
 
 app.all('*',
   function (req, res) {
-    res.status(404).sendFile(__dirname + '/html/404.html');
+    res.status(404).sendFile(__dirname + '/routers/html/404.html');
   }
 );
 
