@@ -1,0 +1,27 @@
+:root {
+    --point-color: #ffa3a6;
+    --sub1-color: #a3a9ff;
+    --sub2-color: #fffda3;
+}
+
+html, body {
+    margin: 0;
+}
+
+body {
+    height:100vh;
+    overflow:hidden;
+}
+  
+.cell {
+    animation: rotate 10s infinite;
+    opacity:0.2;
+}
+@keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
