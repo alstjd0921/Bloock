@@ -1,10 +1,10 @@
 const mysql = require('mysql');
 const db = {
   host: 'localhost',
-  port: 12345,
+  port: 3306,
   user: 'root',
-  password: 'hellonewworld',
-  database: 'hello'
+  password: 'layer7',
+  database: 'newworld'
 };
 
 var connector;

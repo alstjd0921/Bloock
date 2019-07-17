@@ -12,4 +12,15 @@ router.get('/', function(req, res){
   }
 });
 
+router.post('/blood',function(req, res){
+  let id = req.body.id;
+
+  const selectQuery = "SELECT * FROM blood where id = ?";
+  console.log("[index/blood]");
+  db.query(selectQuery, [id], function(err, result){
+    if(err) throw err;
+    return res.statue(200).json({list:result});
+  });
+});
+
 module.exports = router;
