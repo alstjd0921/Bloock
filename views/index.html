@@ -10,7 +10,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.7.2/css-doodle.min.js"></script>
 
     <link rel="stylesheet" href="/public/stylesheets/main.css">
+    <link rel="stylesheet" href="/public/stylesheets/slide.css">
     <script src="/public/scripts/main.js" defer></script>
+    <script src="/public/scripts/index.js" defer></script>
 </head>
 
 <body>
@@ -34,8 +36,141 @@
             );
     </css-doodle> -->
 
-    
-    
+    <div id="user-information">
+        <span><%= "유저이름" %>님의 헌혈증은</span>
+        <span><%= "헌혈증 개수" %>개</span>
+        <span>입니다</span>
+    </div>
+
+    <div id="main-contents">
+        <div id="blood-donation-list">
+            <div id="slide">
+                <input type="radio" name="pos" id="pos1" checked>
+                <input type="radio" name="pos" id="pos2">
+                <input type="radio" name="pos" id="pos3">
+                <input type="radio" name="pos" id="pos4">
+                <ul>
+                    <li>
+                        <% if (헌혈증.length <= 6) { %>
+                            <% for (let i = 0; i < "헌혈증.length"; i++) { %>
+                                <div class="blood-donation-item">
+                                    <%= "헌혈증[i].이름" %>
+                                    <%= "헌혈증[i].헌혈종류" %>
+                                    <%= "헌혈증[i].생년월일" %>
+                                    <%= "헌혈증[i].성별" %>
+                                    <%= "헌혈증[i].헌혈일자" %>
+                                </div>
+                            <% } %>
+                        <% } else { %>
+                            <% for (let i = 0; i < 6; i++) { %>
+                                <div class="blood-donation-item">
+                                    <%= "헌혈증[i].이름" %>
+                                    <%= "헌혈증[i].헌혈종류" %>
+                                    <%= "헌혈증[i].생년월일" %>
+                                    <%= "헌혈증[i].성별" %>
+                                    <%= "헌혈증[i].헌혈일자" %>
+                                </div>
+                            <% } %>
+                        <% } %>
+                    </li>
+
+
+
+                    <li>
+                        <% if (헌혈증.length <= 12) { %>
+                            <% for (let i = 6; i < "헌혈증.length"; i++) { %>
+                                <div class="blood-donation-item">
+                                    <%= "헌혈증[i].이름" %>
+                                    <%= "헌혈증[i].헌혈종류" %>
+                                    <%= "헌혈증[i].생년월일" %>
+                                    <%= "헌혈증[i].성별" %>
+                                    <%= "헌혈증[i].헌혈일자" %>
+                                </div>
+                            <% } %>
+                        <% } else { %>
+                            <% for (let i = 6; i < 12; i++) { %>
+                                <div class="blood-donation-item">
+                                    <%= "헌혈증[i].이름" %>
+                                    <%= "헌혈증[i].헌혈종류" %>
+                                    <%= "헌혈증[i].생년월일" %>
+                                    <%= "헌혈증[i].성별" %>
+                                    <%= "헌혈증[i].헌혈일자" %>
+                                </div>
+                            <% } %>
+                        <% } %>
+                    </li>
+
+
+
+                    <li>
+                        <% if (헌혈증.length <= 18) { %>
+                            <% for (let i = 12; i < "헌혈증.length"; i++) { %>
+                                <div class="blood-donation-item">
+                                    <%= "헌혈증[i].이름" %>
+                                    <%= "헌혈증[i].헌혈종류" %>
+                                    <%= "헌혈증[i].생년월일" %>
+                                    <%= "헌혈증[i].성별" %>
+                                    <%= "헌혈증[i].헌혈일자" %>
+                                </div>
+                            <% } %>
+                        <% } else { %>
+                            <% for (let i = 12; i < 18; i++) { %>
+                                <div class="blood-donation-item">
+                                    <%= "헌혈증[i].이름" %>
+                                    <%= "헌혈증[i].헌혈종류" %>
+                                    <%= "헌혈증[i].생년월일" %>
+                                    <%= "헌혈증[i].성별" %>
+                                    <%= "헌혈증[i].헌혈일자" %>
+                                </div>
+                            <% } %>
+                        <% } %>
+                    </li>
+
+
+
+                    <li>
+                        <% if (헌혈증.length <= 24) { %>
+                            <% for (let i = 18; i < "헌혈증.length"; i++) { %>
+                                <div class="blood-donation-item">
+                                    <%= "헌혈증[i].이름" %>
+                                    <%= "헌혈증[i].헌혈종류" %>
+                                    <%= "헌혈증[i].생년월일" %>
+                                    <%= "헌혈증[i].성별" %>
+                                    <%= "헌혈증[i].헌혈일자" %>
+                                </div>
+                            <% } %>
+                        <% } else { %>
+                            <% for (let i = 18; i < 24; i++) { %>
+                                <div class="blood-donation-item">
+                                    <%= "헌혈증[i].이름" %>
+                                    <%= "헌혈증[i].헌혈종류" %>
+                                    <%= "헌혈증[i].생년월일" %>
+                                    <%= "헌혈증[i].성별" %>
+                                    <%= "헌혈증[i].헌혈일자" %>
+                                </div>
+                            <% } %>
+                        <% } %>
+                    </li>
+                </ul>
+
+                <p class="pos">
+                    <label for="pos1"></label>
+                    <label for="pos2"></label>
+                    <label for="pos3"></label>
+                    <label for="pos4"></label>
+                </p>
+            </div>
+        </div>
+
+        <div id="donate-blood-donation">
+            <!-- 이부분 fatch로 작성 -->
+            <input type="number" max="<%= 헌혈증.length + 1 %>" name="donateBloodDonation" oninput="maxLengthCheck(this)">    <!-- 이거 직접 입력하면 제대로 안먹힘 -->
+            <input type="button" value="기부하기">
+        </div>
+    </div>
+
+    <div id="토스트">최대 개수보다 많습니다</div>
+
 </body>
 
 </html>
