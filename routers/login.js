@@ -2,6 +2,12 @@ const express = require("express");
 const router = express.Router();
 const db = require('../db/connector.js');
 
+router.get('/login', function(req, res){
+  res.render('login', {
+    
+  })
+});
+
 router.post('/register', function(req, res){
   let name = req.body.name;
   let passwd = crypto.createHash('sha512').update(crypto.createHash('sha512').update(req.body.RegisterPasswd).digest('base64')).digest('base64');
@@ -38,3 +44,5 @@ router.post('/login', function(req,res){
     }
   });
 });
+
+module.exports = router;

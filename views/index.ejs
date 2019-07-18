@@ -2,39 +2,35 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include ./head %>
     <title>블록체인 헌혈 :: 메인</title>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.7.2/css-doodle.min.js"></script>
-
-    <link rel="stylesheet" href="/public/stylesheets/main.css">
     <link rel="stylesheet" href="/public/stylesheets/slide.css">
-    <script src="/public/scripts/main.js" defer></script>
     <script src="/public/scripts/index.js" defer></script>
 </head>
 
 <body>
-    <!-- <css-doodle grid="8">
-        :doodle {
+    <div class="doodle-container">
+        <css-doodle grid="8">
+            :doodle {
             size: 100vmax;
             background: #673AB7;
             overflow: hidden;
-        }
-        clip-path: @shape(bud, 5);
-        background: hsla(
-            calc(300 + 3 * @index()), 75%, 70%, @rand(.8)
-        );
-        transition: .2s ease @rand(300ms);
-        transform:
+            }
+            clip-path: @shape(bud, 5);
+            background: hsla(
+            calc(300 + 3 * @index()), 75%, 70%, @rand(.8) 
+            );
+            transition: .2s ease @rand(300ms);
+            transform:
             scale(@rand(.2, 1.5))
             translate3d(
                 @rand(-50%, 50%),
                 @rand(-50%, 50%),
                 0
-            );
-    </css-doodle> -->
+            )
+            rotate(@rand(0deg, 360deg));
+        </css-doodle>
+    </div>
 
     <div id="user-information">
         <span><%= "유저이름" %>님의 헌혈증은</span>

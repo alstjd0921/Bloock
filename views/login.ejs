@@ -1,63 +1,63 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include ./head %>
     <title>블록체인 헌혈 :: 로그인</title>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.7.2/css-doodle.min.js"></script>
-
-    <link rel="stylesheet" href="/public/stylesheets/main.css">
-    <script src="/public/scripts/main.js" defer></script>
 </head>
+
 <body style="background: #673AB7;">
-    <!-- <css-doodle grid="8">
-        :doodle {
+    <div class="doodle-container">
+        <css-doodle grid="8">
+            :doodle {
             size: 100vmax;
             background: #673AB7;
             overflow: hidden;
-        }
-        clip-path: @shape(bud, 5);
-        background: hsla(
+            }
+            clip-path: @shape(bud, 5);
+            background: hsla(
             calc(300 + 3 * @index()), 75%, 70%, @rand(.8)
-        );
-        transition: .2s ease @rand(300ms);
-        transform:
+            );
+            transition: .2s ease @rand(300ms);
+            transform:
             scale(@rand(.2, 1.5))
             translate3d(
-                @rand(-50%, 50%),
-                @rand(-50%, 50%),
-                0
-            );
-    </css-doodle> -->
+            @rand(-50%, 50%),
+            @rand(-50%, 50%),
+            0
+            )
+            rotate(@rand(0deg, 360deg));
+        </css-doodle>
+    </div>
 
     <div id="main-door">
         <div class="cover">
             <h1 id="open-phrases">당신의 블록체인 헌혈증 입니다.</h1>
-            <span class="sub-phrases">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo voluptas laudantium deserunt dolorum corporis nobis maiores!</span>
+            <span class="sub-phrases">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo voluptas laudantium
+                deserunt dolorum corporis nobis maiores!</span>
         </div>
     </div>
 
     <div id="login-door">
         <!-- 로그인 폼 -->
         <form action="/login" method="POST">
-            <input type="text" name="id">    <!-- 아이디 -->
-            <input type="password" name="password">    <!-- 비밀번호 -->
+            <input type="text" name="id"> <!-- 아이디 -->
+            <input type="password" name="password"> <!-- 비밀번호 -->
             <input type="submit">
         </form>
 
         <!-- 회원가입 폼 -->
         <form action="/join" method="POST">
-            <input type="text" name="id">    <!-- 아이디 -->
-            <input type="password" name="password">    <!-- 비밀번호 -->
-            <input type="password" name="confirmPassword">    <!-- 비밀번호 확인 -->
-            <input type="text" name="name">    <!-- 이름 -->
-            <input type="number" name="resident-registration-number">    <!-- 주민등록번호 앞자리6개 뒷자리1개 -->
+            <input type="text" name="id"> <!-- 아이디 -->
+            <input type="password" name="password"> <!-- 비밀번호 -->
+            <input type="password" name="confirmPassword"> <!-- 비밀번호 확인 -->
+            <input type="text" name="name"> <!-- 이름 -->
+            <input type="number" name="resident-registration-number"> <!-- 주민등록번호 앞자리6개 뒷자리1개 -->
             <input type="submit">
         </form>
     </div>
 
 
 </body>
+
 </html>
