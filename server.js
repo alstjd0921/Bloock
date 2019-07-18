@@ -1,10 +1,16 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 const http = require('http').Server(app);
 const db = require('./db/connector.js');
 const expressSession = require('express-session');
 const index = require('./routers/index.js');
 const loginPage = require('./routers/login.js')
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+app.engine('html',require('ejs').renderFile);
 
 const session = expressSession({
   secret: 'my key',
