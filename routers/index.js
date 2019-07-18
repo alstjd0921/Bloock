@@ -17,13 +17,8 @@ router.get('/', function(req, res){
 
     const selectQuery = "SELECT * FROM blood where id = ?";
     db.query(selectQuery, [user], function(err, result){
-<<<<<<< Updated upstream
-      if(err) throw err;
-      
-=======
       // if(err) throw err;
 
->>>>>>> Stashed changes
       res.render('index', {
         list: result,
         '헌혈증': asdf
