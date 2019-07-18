@@ -5,7 +5,7 @@ const http = require('http').Server(app);
 const db = require('./db/connector.js');
 const expressSession = require('express-session');
 const index = require('./routers/index.js');
-const login = require('./routers/login.js');
+const loginPage = require('./routers/login.js')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -17,11 +17,10 @@ const session = expressSession({
   resave: true,
   saveUninitialized:true
 });
-
 app.use(session);
+
 app.use(express.static(__dirname + '/'));
-app.use('/', index);
-app.use('/', login);
+app.use('/',index);
 
 app.all('*',
   function (req, res) {

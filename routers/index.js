@@ -4,11 +4,6 @@ const router = express.Router();
 const db = require('../db/connector.js');
 const login = require("./login.js");
 
-// 쓰레기
-let asdf = [{
-  
-}];
-
 router.get('/', function(req, res){
   let user = req.session.user;
 
@@ -17,16 +12,10 @@ router.get('/', function(req, res){
 
     const selectQuery = "SELECT * FROM blood where id = ?";
     db.query(selectQuery, [user], function(err, result){
-<<<<<<< Updated upstream
       if(err) throw err;
       
-=======
-      // if(err) throw err;
-
->>>>>>> Stashed changes
       res.render('index', {
-        list: result,
-        '헌혈증': asdf
+        list: result
       })
       // return res.statue(200).json({list:result});
     });
