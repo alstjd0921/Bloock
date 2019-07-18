@@ -1,30 +1,11 @@
 const express = require('express');
-const path = require('path');
 const router = express.Router();
 const db = require('../db/connector.js');
 const login = require("./login.js");
 
-// 쓰레기
-let asdf = [{
-  
-}];
-
 router.get('/', function(req, res){
-  let user = req.session.user;
-
-
-  if (user === undefined){
-
-    const selectQuery = "SELECT * FROM blood where user = ?";
-    db.query(selectQuery, [user], function(err, result){
-      if(err) throw err;
-
-      res.render('index', {
-        list: result,
-        '헌혈증': asdf
-      })
-      // return res.statue(200).json({list:result});
-    });
+  if (req.session.user === undefined){
+    res.sendFile(__dirname + '/html/index.html');
   }
   else {
     res.redirect('/html/404.html');
