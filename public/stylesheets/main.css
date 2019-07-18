@@ -1,29 +1,33 @@
 :root {
-    --point-color: #ffa3a6;
-    --sub1-color: #a3a9ff;
-    --sub2-color: #fffda3;
+  --point-color: #ffa3a6;
+  --sub1-color: #a3a9ff;
+  --sub2-color: #fffda3;
 }
 
-html,
-body {
-    margin: 0;
+body,
+html {
+  margin: 0;
 }
 
-body {
-    height: 100vh;
-    overflow: hidden;
+.doodle-container {
+	position: absolute;
+	z-index: -1;
+	width: 100%;
+	overflow: hidden;
+}
+
+css-doodle {
 }
 
 .cell {
-    animation: rotate 10s infinite;
-    opacity: 0.2;
+  animation: rotate 10s infinite;
+  opacity: 0.2;
 }
-
 @keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
