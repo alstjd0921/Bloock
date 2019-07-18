@@ -15,7 +15,7 @@ router.get('/', function(req, res){
 router.post('/blood',function(req, res){
   let id = req.body.id;
 
-  const selectQuery = "SELECT * FROM blood where date = ?";
+  const selectQuery = "SELECT * FROM blood where user = ?";
   console.log("[index/blood]");
   db.query(selectQuery, [id], function(err, result){
     if(err) throw err;
