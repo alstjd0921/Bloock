@@ -17,10 +17,8 @@ router.post('/register', function(req, res){
   const insertQuery = "INSERT INTO user (name, id, passwd, resident) VALUES(?, ?, ?, ?)";
   console.log("[login/register]");
   db.query(insertQuery, [name, id, passwd, resident], function(err, result){
-    if(err) throw err;
-    return res.status(200).json({message:"Register Success"});
-  });
-  res.render('login', {
+    res.render('login', {
+    });
   });
 });
 
