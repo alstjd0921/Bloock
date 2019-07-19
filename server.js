@@ -7,8 +7,7 @@ const expressSession = require('express-session');
 const index = require('./routers/index.js');
 const login = require('./routers/login.js');
 const bodyParser = require("body-parser");
-const Web3 = require('web3');
-const web3 = new Web3('ws://localhost:8546');
+
 
 // view engine setup
 app.set('view engine', 'ejs');
