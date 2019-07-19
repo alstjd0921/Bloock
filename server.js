@@ -9,7 +9,7 @@ const login = require('./routers/login.js');
 const bodyParser = require("body-parser");
 
 // view engine setup
-app.set('view engine', 'html');
+app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.engine('html',require('ejs').renderFile);
 

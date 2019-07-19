@@ -5,8 +5,7 @@ const crypto = require('crypto');
 
 router.get('/loginpage', function(req, res){
   res.render('login', {
-
-  })
+  });
 });
 
 router.post('/register', function(req, res){
@@ -23,7 +22,7 @@ router.post('/register', function(req, res){
   });
   res.render('login', {
     list: result
-  })
+  });
 });
 
 router.post('/login', function(req,res){
@@ -37,7 +36,7 @@ router.post('/login', function(req,res){
     if(result.length == 0){
       res.render('login', {
         list: result
-      })
+      });
       //return res.status(401).json({message:"Login Fail"});
     }else if(result[0].passwd == passwd){
       req.session.user = {
@@ -49,12 +48,12 @@ router.post('/login', function(req,res){
         list: result,
         name: user.name,
         '헌혈증': user
-      })
+      });
       //return res.status(200).json({message:"Login Success"});
     }else{
       res.render('login', {
         list: result
-      })
+      });
       //return res.status(401).json({message:"Login Fail"});
     }
   });
