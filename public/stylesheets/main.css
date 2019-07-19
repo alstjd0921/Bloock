@@ -165,8 +165,8 @@ css-doodle {
 #login-form {
 	min-width: 700px;
 	max-width: 50%;
-	margin: auto;
-	height: 500px;
+	margin: 0 auto;
+	padding: 3rem;
 	background: #ffffff;
 	clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
 	transition: 0.5s;
@@ -177,6 +177,12 @@ css-doodle {
 	transition: 0.5s;
 }
 
+.login-phrases {
+	font-size: 300%;
+	margin: 0 0 1.5rem;
+	letter-spacing: -0.10em;
+	
+}
 
 
 .cursor-pointer {
