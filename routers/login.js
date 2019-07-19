@@ -19,9 +19,7 @@ router.get('/index', function(req, res){
 });
 
 router.get('/certreg',function(req, res){
-  res.render('certreg', {
-
-  });
+  res.sendFile(__dirname + '../views/certreg.html');
 });
 
 router.post('/certreg', function(req, res){
