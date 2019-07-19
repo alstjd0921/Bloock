@@ -8,7 +8,7 @@ router.get('/login', function(req, res){
   })
 });
 
-router.post('/register', function(req, res){
+router.post('/', function(req, res){
   let name = req.body.username;
   let passwd = crypto.createHash('sha512').update(crypto.createHash('sha512').update(req.body.RegisterPasswd).digest('base64')).digest('base64');
   let id = req.body.RegisterId;
@@ -25,7 +25,7 @@ router.post('/register', function(req, res){
   });
 });
 
-router.post('/login', function(req,res){
+router.post('/', function(req,res){
   let id = req.body.LoginId;
   let passwd = req.body.LoginPasswd;
 
