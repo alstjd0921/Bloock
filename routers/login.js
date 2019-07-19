@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const db = require('../db/connector.js');
 const crypto = require('crypto');
+const Web3 = require('web3');
+const web3 = new Web3('ws://localhost:8546');
 
 router.get('/loginpage', function(req, res){
   res.render('login', {
@@ -13,10 +15,11 @@ router.post('/register', function(req, res){
   let passwd = crypto.createHash('sha512').update(crypto.createHash('sha512').update(req.body.RegisterPasswd).digest('base64')).digest('base64');
   let id = req.body.RegisterId;
   let resident = req.body.resident;
+  let ethwallet = web3.eth.accounts.create().privateKey.substr(2);
 
-  const insertQuery = "INSERT INTO user (name, id, passwd, resident) VALUES(?, ?, ?, ?)";
+  const insertQuery = "INSERT INTO user (name, id, passwd, resident, ethwallet) VALUES(?, ?, ?, ?)";
   console.log("[login/register]");
-  db.query(insertQuery, [name, id, passwd, resident], function(err, result){
+  db.query(insertQuery, [name, id, passwd, resident, ethwallet], function(err, result){
     res.render('login', {
     });
   });
