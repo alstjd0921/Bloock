@@ -40,10 +40,10 @@
                     이제 분실하고 파손되는 물리적 헌혈증을 받지 마세요!
                 </div>
                 
-                <%# <div style="transform: translateZ(20px) "> %>
-                    <button id="entrance-button" class="cursor-pointer material-design" data-color="#ff1418">
-                        들어가기
-                    </button>
+
+                <button id="entrance-button" class="cursor-pointer material-design" data-color="#ff1418">
+                    들어가기
+                </button>
             </div>
         </div>
 
@@ -52,7 +52,7 @@
             <!-- 로그인 폼 -->
             <form id="login-form" class="display-none" action="/login" method="POST">
                 <input type="text" name="id"> <!-- 아이디 -->
-                <input type="password" name="password"> <!-- 비밀번호 -->
+                <input type="password" name="passwd"> <!-- 비밀번호 -->
                 <input type="submit">
             </form>
 
@@ -62,7 +62,7 @@
                 <input type="password" name="password"> <!-- 비밀번호 -->
                 <input type="password" name="confirmPassword"> <!-- 비밀번호 확인 -->
                 <input type="text" name="name"> <!-- 이름 -->
-                <input type="number" name="resident-registration-number"> <!-- 주민등록번호 앞자리6개 뒷자리1개 -->
+                <input type="number" name="resident"> <!-- 주민등록번호 앞자리6개 뒷자리1개 -->
                 <input type="submit">
             </form>
         </div>
