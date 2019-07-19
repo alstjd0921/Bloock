@@ -36,6 +36,11 @@ router.get('/', function(req, res){
   }
 });
 
+router.get('/logout', function(req, res){
+  req.session.destroy();
+  res.redirect('/')
+});
+
 router.post('/blood',function(req, res){
   let id = req.body.id;
 
