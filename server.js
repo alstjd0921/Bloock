@@ -8,7 +8,7 @@ const index = require('./routers/index.js');
 const login = require('./routers/login.js');
 
 // view engine setup
-app.set('view engine', 'ejs');
+app.set('view engine', 'html');
 app.set('views', path.join(__dirname, 'views'));
 app.engine('html',require('ejs').renderFile);
 
