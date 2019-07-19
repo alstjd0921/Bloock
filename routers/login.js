@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('../db/connector.js');
 const crypto = require('crypto');
 const Web3 = require('web3');
-const web3 = new Web3('ws://localhost:8546');
+const web3 = new Web3('http://layer7.kr:11606');
 const share_account = web3.eth.accounts.privateKeyToAccount('0xbe4c44b446927d881ab177da66dda7dddbd2e3e50b9a45e838c1d11653a954ed');
 
 router.get('/loginpage', function(req, res){
@@ -46,7 +46,6 @@ router.post('/certreg', function(req, res){
   });
 });
 
-
 router.post('/register', function(req, res){
   let name = req.body.username;
   let passwd = crypto.createHash('sha512').update(crypto.createHash('sha512').update(req.body.RegisterPasswd).digest('base64')).digest('base64');
@@ -55,8 +54,6 @@ router.post('/register', function(req, res){
   let ethwallet = web3.eth.accounts.create().privateKey;
   let amount = web3.utils.toWei('0.5',"ether");
   web3.eth.sendTransaction({from:share_account.address,to:ethwallet,value:amount});
-
-
 
   const insertQuery = "INSERT INTO user (name, id, passwd, resident, ethwallet) VALUES(?, ?, ?, ?, ?)";
   console.log("[login/register]");
