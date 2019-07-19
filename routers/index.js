@@ -19,7 +19,7 @@ router.get('/', function(req, res){
 
 
   if (user === undefined){
-    res.redirect('/login');
+    res.redirect('/loginpage');
   }
   else {
     id = user.id;
