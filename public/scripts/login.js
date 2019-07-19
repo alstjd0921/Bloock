@@ -1,5 +1,12 @@
 document.querySelector("#entrance-button").addEventListener("click", function () {
     document.querySelector("#main-door").classList.add("fade-out-login");
+    setTimeout(function() {
+        document.querySelector("#main-door").classList.add("display-none")
+        document.querySelector("#login-door").classList.remove("display-none");
+
+        document.querySelector("#login-form").classList.remove("display-none");
+        document.querySelector("#login-form").classList.add("login-ani-on");
+    }, 500)
 })
 
 
