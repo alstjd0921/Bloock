@@ -23,7 +23,7 @@ router.get('/certreg',function(req, res){
 });
 
 router.post('/certreg', function(req, res){
-  let name = req.body.name;
+  let name = req.body.id;
   let type = req.body.type;
 
   const selectQuery = "SELECT * FROM user where id = ?";
