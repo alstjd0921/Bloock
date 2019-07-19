@@ -154,6 +154,30 @@ css-doodle {
 	transition: 0.5s;
 }
 
+#login-door {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 100vh;
+
+}
+#login-form {
+	min-width: 700px;
+	max-width: 50%;
+	margin: auto;
+	height: 500px;
+	background: #ffffff;
+	clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	transition: 0.5s;
+}
+
+#login-form.fade-in-login {
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+	transition: 0.5s;
+}
+
+
 
 .cursor-pointer {
   cursor: pointer;

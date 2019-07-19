@@ -4,8 +4,7 @@ document.querySelector("#entrance-button").addEventListener("click", function ()
         document.querySelector("#main-door").classList.add("display-none")
         document.querySelector("#login-door").classList.remove("display-none");
 
-        document.querySelector("#login-form").classList.remove("display-none");
-        document.querySelector("#login-form").classList.add("login-ani-on");
+        document.querySelector("#login-form").classList.add("fade-in-login");
     }, 500)
 })
 
