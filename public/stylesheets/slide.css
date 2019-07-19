@@ -178,3 +178,59 @@ body {
       margin-left: 1em;
         
   }
+
+/*box.html*/
+
+.pink_background{
+    background-color: #ff9990
+  }
+
+.slide_box{
+    background-color: #FFF;
+    margin-top: 10%;
+      margin-left: 20%;
+      width: 1200px;
+      height: 700px;
+      
+  }
+  .slide_image{
+      width: 600px;
+      height : 500px;
+      background-image: url(https://w.namu.la/s/30ffd10db08b78de532f538f5b2f1ec4a7ed11f2641435faa9e788a9686c3a1966c765f35aeead208bd42140ceb8d8b802f3c4f060d435a4cfb955cdf88e4786f5b2d25bde92c22bcb2742deb65be03aaa289cadd6234853d85446d74aaf9d2c);
+      
+      float : left;
+      margin-left: 2em;
+      margin-right: 2em;
+  }
+  
+  .slide_center_text{
+      margin-top: 1em;
+      text-align: center;
+  }
+  .slide_text{
+      line-height: 84px;
+      margin-right: 2em;
+      font-size: 125%;
+  }
+  .slide_line{
+      width: 100%;
+      text-align: center;
+      
+
+  }
+  .slide_line::after{
+    display: inline-block; 
+    margin: 0 0 3px 20px; 
+    height: 1px; content: " ";
+     text-shadow: none; 
+     background-color: #999; 
+     width: 40%;
+  }
+  .slide_line::before{
+    display: inline-block; 
+    margin: 0 20px 3px 0; 
+    height: 1px; content: " ";
+     text-shadow: none; 
+     background-color: #999; 
+     width: 40%;
+  }
