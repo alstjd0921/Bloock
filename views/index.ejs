@@ -32,13 +32,14 @@
         </css-doodle>
     </div>
 
-    <div id="user-information">
-        <span><%= "asdf" %>님의 헌혈증은</span>
-        <span><%= "헌혈증 개수" %>개</span>
-        <span>입니다</span>
-    </div>
+    
 
     <div id="main-contents">
+            <div id="user-information">
+                    <span><%= "asdf" %>님의 헌혈증은</span>
+                    <span><%= "헌혈증 개수" %>개</span>
+                    <span>입니다</span>
+                </div>
         <div id="blood-donation-list">
             <div id="slide">
                 <input type="radio" name="pos" id="pos1" checked>
@@ -47,14 +48,18 @@
                 <input type="radio" name="pos" id="pos4">
                 <ul>
                     <li>
+                            
                         <% if (헌혈증.length <= 6) { %>
                             <% for (let i = 0; i < "헌혈증.length"; i++) { %>
+                                
                                 <div class="blood-donation-item">
+                                      
                                     <%= "헌혈증[i].이름" %>
                                     <%= "헌혈증[i].헌혈종류" %>
                                     <%= "헌혈증[i].생년월일" %>
                                     <%= "헌혈증[i].성별" %>
                                     <%= "헌혈증[i].헌혈일자" %>
+                                    
                                 </div>
                             <% } %>
                         <% } else { %>
@@ -67,7 +72,7 @@
                                     <%= "헌혈증[i].헌혈일자" %>
                                 </div>
                             <% } %>
-                        <% } %>
+                        <
                     </li>
 
 
