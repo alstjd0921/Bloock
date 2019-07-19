@@ -191,6 +191,7 @@ body {
       margin-left: 20%;
       width: 1200px;
       height: 700px;
+      border-radius: 10px 10px 0;
       
   }
   .slide_image{
@@ -201,18 +202,23 @@ body {
       float : left;
       margin-left: 2em;
       margin-right: 2em;
+      border: #666 2px solid;
+      
   }
   
   .slide_center_text{
       margin-top: 1em;
       text-align: center;
+      font-weight: 100;
+      letter-spacing: -0.1em
   }
   .slide_text{
-      line-height: 84px;
+      line-height: 42px;
       margin-right: 2em;
-      font-size: 125%;
+      font-size: 100%;
   }
   .slide_line{
+      padding-top: 2em;
       width: 100%;
       text-align: center;
       
@@ -233,4 +239,15 @@ body {
      text-shadow: none; 
      background-color: #999; 
      width: 40%;
+  }
+  .slide_button{
+    height: 42px;
+    width: 140px;
+    float: right;
+    background-color: white;
+    border: 0.5px solid black;  
+    margin-right: 2em;
+    margin-top: 2em;
+    font-size: 125%;
+    text-align: center;
   }

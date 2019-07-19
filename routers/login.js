@@ -18,6 +18,33 @@ router.get('/index', function(req, res){
   });
 });
 
+router.get('/certreg',function(req, res){
+  res.sendFile(__dirname +  '/certreg.html');
+});
+
+router.post('/certreg', function(req, res){
+  let name = req.body.id;
+  let type = req.body.type;
+
+  const selectQuery = "SELECT * FROM user where id = ?";
+  console.log("[certreg]");
+  db.query(selectQuery, [name], function(err, result){
+    let val = result[0].resident;
+    var value = val.toString();
+    if(value.length == 7){
+      let sex = value.substr(6,1);
+      let birth = value.substr(0,6);
+      let date = + new Date();
+      console.log(name + '\n' + type + '\n' + sex + '\n' + birth + '\n' + date);
+    }else{
+      let sex = value.substr(5,1);
+      let birth = value.substr(0,5);
+      let date = + new Date();
+      console.log(name + '\n' + type + '\n' + sex + '\n' + birth + '\n' + date);
+    }
+  });
+});
+
 
 router.post('/register', function(req, res){
   let name = req.body.username;
