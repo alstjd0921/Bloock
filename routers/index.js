@@ -10,6 +10,58 @@ let asdf = [{
 }];
 
 router.get('/', function(req, res){
+  req.session.user = {
+    id : "fuck",
+    name : "fuck",
+    authorized : true
+  };
+  let user = req.session.user;
+
+
+  if (user === undefined){
+    //res.redirect('/html/404.html');
+  }
+  else {
+    const selectQuery = "SELECT * FROM blood where user = ?";
+    db.query(selectQuery, ['test'], function(err, result){
+      // if(err) throw err;
+
+      res.render('index', {
+        list: result,
+        name: user.name,
+        '헌혈증': user
+      })
+      // return res.statue(200).json({list:result});
+    });
+  }
+});
+
+router.post('/blood',function(req, res){
+  let id = req.body.id;
+
+  const selectQuery = "SELECT * FROM blood where user = ?";
+  console.log("[index/blood]");
+  db.query(selectQuery, [id], function(err, result){
+    if(err) throw err;
+    return res.statue(200).json({list:result});
+  });
+});
+
+module.exports = router;
+
+/*
+const express = require('express');
+const path = require('path');
+const router = express.Router();
+const db = require('../db/connector.js');
+const login = require("./login.js");
+
+// 쓰레기
+let asdf = [{
+
+}];
+
+router.get('/', function(req, res){
   let user = req.session.user;
 
 
@@ -43,3 +95,5 @@ router.post('/blood',function(req, res){
 });
 
 module.exports = router;
+
+*/

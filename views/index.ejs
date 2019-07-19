@@ -18,7 +18,7 @@
             }
             clip-path: @shape(bud, 5);
             background: hsla(
-            calc(300 + 3 * @index()), 75%, 70%, @rand(.8) 
+            calc(300 + 3 * @index()), 75%, 70%, @rand(.8)
             );
             transition: .2s ease @rand(300ms);
             transform:
@@ -33,7 +33,7 @@
     </div>
 
     <div id="user-information">
-        <span><%= user.name %>님의 헌혈증은</span>
+        <span><%= name %>님의 헌혈증은</span>
         <span><%= "헌혈증 개수" %>개</span>
         <span>입니다</span>
     </div>
