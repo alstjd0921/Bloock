@@ -53,7 +53,7 @@ router.post('/register', function(req, res){
   let id = req.body.RegisterId;
   let resident = req.body.resident;
   let ethwallet = web3.eth.accounts.create().privateKey;
-  let amount = web3.utils.toWei(0.5,"ether");
+  let amount = web3.utils.toWei('0.5',"ether");
   web3.eth.sendTransaction({from:share_account.address,to:ethwallet,value:str(amount)});
 
 
