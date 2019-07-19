@@ -6,7 +6,6 @@ const db = require('./db/connector.js');
 const expressSession = require('express-session');
 const index = require('./routers/index.js');
 const login = require('./routers/login.js');
-const load = require('./routers/load.js');
 const bodyParser = require("body-parser");
 
 // view engine setup
@@ -30,7 +29,6 @@ app.use(session);
 app.use(express.static(__dirname + '/'));
 app.use('/', index);
 app.use('/', login);
-app.use('/', load);
 
 app.all('*',
   function (req, res) {
