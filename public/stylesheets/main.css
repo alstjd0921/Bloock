@@ -227,10 +227,12 @@ css-doodle {
   height: 100vh;
 }
 #login-form {
+	position: relative;
   min-width: 700px;
   max-width: 50%;
   margin: 0 auto;
   padding: 3rem;
+  padding-bottom: 5rem;
   background: rgba(255, 255, 255, 0.9);
   clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
   transition: 0.5s;
@@ -248,12 +250,17 @@ css-doodle {
 }
 
 .to-join-button {
-	position: relative;
-	right: calc(3rem + 50px);
-	background-color: var(--blood-color);
-	width: 50px;
-	height: 100%;
-
+	position: absolute;
+	right: 0;
+	bottom: 0px;
+	left: 0;
+    z-index: 10;
+	background-color: #ffffff;
+	padding-left: 3rem;
+	line-height: 30px;
+	height: 30px;
+	overflow: visible;
+	color: var(--fresh-blood-color);
 }
 
 
