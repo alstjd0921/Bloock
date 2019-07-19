@@ -6,7 +6,7 @@ const login = require("./login.js");
 
 // 쓰레기
 let asdf = [{
-  
+
 }];
 
 router.get('/', function(req, res){
@@ -17,7 +17,7 @@ router.get('/', function(req, res){
 
     const selectQuery = "SELECT * FROM blood where user = ?";
     db.query(selectQuery, [user], function(err, result){
-      if(err) throw err;
+      // if(err) throw err;
 
       res.render('index', {
         list: result,

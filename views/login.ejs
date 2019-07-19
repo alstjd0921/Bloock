@@ -3,38 +3,49 @@
 
 <head>
     <% include ./head %>
-    <title>블록체인 헌혈 :: 로그인</title>
+    <title>블록체인 헌혈 :: 대문</title>
+    <script src="/public/scripts/login.js" defer></script>
 </head>
 
-<body style="background: #673AB7;">
+<body>
     <div class="doodle-container">
-        <css-doodle grid="8">
+        <css-doodle grid="7">
             :doodle {
-            size: 100vmax;
-            background: #673AB7;
-            overflow: hidden;
+                size: 100vmax;
+                background: #b7141a;
+                overflow: hidden;
             }
-            clip-path: @shape(bud, 5);
+            clip-path: @shape(bean);
             background: hsla(
-            calc(300 + 3 * @index()), 75%, 70%, @rand(.8)
+                calc(300 + 3 * @index()), 75%, 100%, @rand(.8)
             );
             transition: .2s ease @rand(300ms);
             transform:
-            scale(@rand(.2, 1.5))
-            translate3d(
-            @rand(-50%, 50%),
-            @rand(-50%, 50%),
-            0
-            )
-            rotate(@rand(0deg, 360deg));
+                scale(@rand(.2, 1.5))
+                translate3d(
+                    @rand(-50%, 50%),
+                    @rand(-50%, 50%),
+                    0
+                )
+                rotate(@rand(0deg, 360deg));
         </css-doodle>
     </div>
 
-    <div id="main-door">
-        <div class="cover">
-            <h1 id="open-phrases">당신의 블록체인 헌혈증 입니다.</h1>
-            <span class="sub-phrases">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo voluptas laudantium
-                deserunt dolorum corporis nobis maiores!</span>
+    <div class="flexY XYfull">
+        <div id="main-door" >
+            <div class="cover">
+                <h1 id="open-phrases">당신의 <br>블록체인 <br>헌혈증 입니다</h1>
+                <div class="sub-phrases">
+                    당신의 블록체인 헌혈증이 당신의 나눔을 더욱 안전하게 보관합니다<br>
+                    이제 분실하고 파손되는 물리적 헌혈증을 받지 마세요!
+                </div>
+                
+                <%# <div style="transform: translateZ(20px) "> %>
+                    <button id="entrance-button" class="cursor-pointer material-design" data-color="#ff1418">
+                        들어가기
+                    </button>
+                <%# </div> %>
+            </div>
         </div>
     </div>
 
