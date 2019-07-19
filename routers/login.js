@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('../db/connector.js');
 const crypto = require('crypto');
 
-router.get('/login', function(req, res){
+router.get('/loginpage', function(req, res){
   res.render('login', {
 
   })
@@ -18,12 +18,12 @@ router.post('/register', function(req, res){
   const insertQuery = "INSERT INTO user (name, passwd, id, resident) VALUES(?, ?, ?, ?)";
   console.log("[login/register]");
   db.query(insertQuery, [name, passwd, id, resident], function(err, result){
-    //if(err) throw err;
-    res.render('login', {
-      list: result
-    })
-    //return res.status(200).json({message:"Register Success"});
+    if(err) throw err;
+    return res.status(200).json({message:"Register Success"});
   });
+  res.render('login', {
+    list: result
+  })
 });
 
 router.post('/login', function(req,res){
