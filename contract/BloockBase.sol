@@ -9,7 +9,7 @@ contract BloockBase {
         string kind;
     }
     
-    BloodCertInfo[] BloodCerts;
+    BloodCertInfo[] public BloodCerts;
     
     event CertCreated(string _name, uint birth);
     mapping (uint256 => address) public certToOwner;
