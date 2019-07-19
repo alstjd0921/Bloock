@@ -51,10 +51,7 @@ router.post('/register', function(req, res){
   let passwd = crypto.createHash('sha512').update(crypto.createHash('sha512').update(req.body.RegisterPasswd).digest('base64')).digest('base64');
   let id = req.body.RegisterId;
   let resident = req.body.resident;
-  let newaccount = web3.eth.accounts.create();
-  let ethwallet = newaccount.privateKey;
-  let amount = web3.utils.toWei('0.5',"ether");
-  web3.eth.sendTransaction({from:share_account.address,to:newaccount.address,value:amount});
+  let ethwallet = req.body.wallet;
 
   const insertQuery = "INSERT INTO user (name, id, passwd, resident, ethwallet) VALUES(?, ?, ?, ?, ?)";
   console.log("[login/register]");
