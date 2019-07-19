@@ -78,7 +78,7 @@ router.post('/login', function(req,res){
         name : result[0].name,
         authorized : true
       };
-      res.redirect('/index');
+      res.redirect('/');
     }else{
       res.render('login', {
       });

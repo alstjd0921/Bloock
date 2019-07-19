@@ -297,11 +297,11 @@ router.get('/', function(req, res){
     const address = '0x6d8a011c99e5a2041b972551e9436ffcc60e5ee3';
     const contract = new web3.eth.Contract(abi,address);
 
-    const selectQuery = "SELECT * FROM user where id = ? and ethwallet = ?";
-    db.query(selectQuery, [id, wallet], function(err, result){
+    const selectQuery = "SELECT * FROM user where id = ?";
+    db.query(selectQuery, [id], function(err, result){
       async function getdata() {
         let results = [];
-        let indices = await contract.methods.getCertByOwner(wallet).call()
+        let indices = await contract.methods.getCertByOwner(result[0].ethwallet).call();
     
         for(var i = 0; i < indices.length; i++) {
           let id = parseInt(indices[i]._hex,16);
@@ -314,8 +314,9 @@ router.get('/', function(req, res){
             'donateDate' : parseInt(obj.gender._hex,16),
             'id': id});
         } 
+        console.log(results);
         res.render('index', {
-          list: result,
+          list: results,
           name: user.name,
         });
       }

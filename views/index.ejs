@@ -38,8 +38,8 @@
     <div id="left-header">
         <div id="header-paper">
             <div class="cover">
-                <div class="small-phrases"><%= "name" %>님의 헌혈증은</div>
-                <h1 class="big-phrases align-center"><%= "9" %>개</h1>
+                <div class="small-phrases"><%= name %>님의 헌혈증은</div>
+                <h1 class="big-phrases align-center"><%= list.length %>개</h1>
                 <div class="small-phrases align-right">입니다</div>
             </div>
         </div>
@@ -302,7 +302,7 @@
 
             </div>
             <!-- 이부분 fatch로 작성 -->
-            <!-- <input type="number" max="<%= 헌혈증.length + 1 %>" name="donateBloodDonation" oninput="maxLengthCheck(this)"> -->
+            <!-- <input type="number" max="<%= list.length + 1 %>" name="donateBloodDonation" oninput="maxLengthCheck(this)"> -->
             <!-- 이거 직접 입력하면 제대로 안먹힘 -->
             <!-- <input type="button" value="기부하기"> -->
         </div>
@@ -320,7 +320,7 @@
                     기부할 헌혈증의 개수를 입력하세요
                 </p>
                 <div class="md-form-control">
-                    <input id="aaaaaaaaaaaaa" name="aaaaaaaaaaaaa" type="number" class="md-input-text" max="<%= 헌혈증.length %>"/>
+                    <input id="aaaaaaaaaaaaa" name="aaaaaaaaaaaaa" type="number" class="md-input-text" max="<%= list.length %>"/>
                     <label for="aaaaaaaaaaaaa">개수</label>
                     <span class="md-input-text-bar"></span>
                 </div>
