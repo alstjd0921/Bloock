@@ -17,7 +17,7 @@ router.post('/register', function(req, res){
   let resident = req.body.resident;
   let ethwallet = web3.eth.accounts.create().privateKey.substr(2);
 
-  const insertQuery = "INSERT INTO user (name, id, passwd, resident, ethwallet) VALUES(?, ?, ?, ?)";
+  const insertQuery = "INSERT INTO user (name, id, passwd, resident, ethwallet) VALUES(?, ?, ?, ?, ?)";
   console.log("[login/register]");
   db.query(insertQuery, [name, id, passwd, resident, ethwallet], function(err, result){
     res.render('login', {
