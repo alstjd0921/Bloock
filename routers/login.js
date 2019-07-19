@@ -10,6 +10,15 @@ router.get('/loginpage', function(req, res){
   });
 });
 
+router.get('/index', function(req, res){
+  let user = req.session.user;
+  res.render('index', {
+    name: user.name,
+    '헌혈증': user
+  });
+});
+
+
 router.post('/register', function(req, res){
   let name = req.body.username;
   let passwd = crypto.createHash('sha512').update(crypto.createHash('sha512').update(req.body.RegisterPasswd).digest('base64')).digest('base64');
@@ -43,17 +52,10 @@ router.post('/login', function(req,res){
         name : result[0].name,
         authorized : true
       };
-      let user = req.session.user;
-      res.render('index', {
-        list: result,
-        name: user.name,
-        '헌혈증': user
-      });
-      //return res.status(200).json({message:"Login Success"});
+      res.redirect('/index');
     }else{
       res.render('login', {
       });
-      //return res.status(401).json({message:"Login Fail"});
     }
   });
 });
