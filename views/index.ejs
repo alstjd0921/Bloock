@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ko">
 
+<!--<META HTTP-EQUIV="refresh" CONTENT="1">-->
+
 <head>
     <% include ./head %>
     <title>블록체인 헌혈 :: 메인</title>
@@ -50,14 +52,18 @@
                 <input type="radio" name="pos" id="pos4">
                 <ul>
                     <li>
+
                         <% if (헌혈증.length <= 6) { %>
                             <% for (let i = 0; i < "헌혈증.length"; i++) { %>
+
                                 <div class="blood-donation-item">
+
                                     <%= "헌혈증[i].이름" %>
                                     <%= "헌혈증[i].헌혈종류" %>
                                     <%= "헌혈증[i].생년월일" %>
                                     <%= "헌혈증[i].성별" %>
                                     <%= "헌혈증[i].헌혈일자" %>
+
                                 </div>
                             <% } %>
                         <% } else { %>

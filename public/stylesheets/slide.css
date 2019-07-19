@@ -104,3 +104,133 @@ li {
 #pos4:checked~.pos>label:nth-child(4) {
     background: #666;
 }
+.blood-donation-box{
+    height: 50px;;
+
+}
+
+
+.blood-donation-item{
+    
+    height: 200px;
+    display : block;
+    background-color: #FFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+    padding: 8em 3em 2em;
+    width: 20em;
+    margin-bottom: 2em;
+    transition: all 600ms cubic-bezier(0.2, 1.3, 0.7, 1);
+    animation: cardIntro 500ms cubic-bezier(0.2, 1.3, 0.7, 1);
+    z-index: 1;
+    border: 0.5px solid black;
+}
+
+/* card.html */
+body {
+    background-color: #F5F4F5;
+  }
+  
+  .columns {
+    -webkit-column-count: 3;
+    -webkit-column-gap: 2rem;
+    -moz-column-count: 3;
+    -moz-column-gap: 1.5rem;
+    padding: 1em;
+    margin: 1em;
+  }
+  
+  .cards {
+    background-color: white;
+    /*margin-bottom: 1em;*/
+    margin: 0 0.5em 1.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 1px 2px 3px #ccc;
+    display: block;
+    -webkit-column-break-inside: avoid;
+    transition: box-shadow ease-in-out 0.2s;
+    width : 500px;
+  }
+  
+  .cards:hover {
+    box-shadow: 2px 3px 10px #ccc;
+  }
+  
+  .card-head {
+    color: white;
+    padding-left: 1em;
+    min-height: 3em;
+    background: #b7141a;   
+    line-height: 48px;
+  }
+  
+  .card-text {
+    padding: 1em;
+  }
+  
+
+  .font_size{
+      margin-left: 1em;
+      font-size: 80%
+  }
+  .card_float{
+      float: left;
+      margin-left: 1em;
+        
+  }
+
+/*box.html*/
+
+.pink_background{
+    background-color: #ff9990
+  }
+
+.slide_box{
+    background-color: #FFF;
+    margin-top: 10%;
+      margin-left: 20%;
+      width: 1200px;
+      height: 700px;
+      
+  }
+  .slide_image{
+      width: 600px;
+      height : 500px;
+      background-image: url(https://w.namu.la/s/30ffd10db08b78de532f538f5b2f1ec4a7ed11f2641435faa9e788a9686c3a1966c765f35aeead208bd42140ceb8d8b802f3c4f060d435a4cfb955cdf88e4786f5b2d25bde92c22bcb2742deb65be03aaa289cadd6234853d85446d74aaf9d2c);
+      
+      float : left;
+      margin-left: 2em;
+      margin-right: 2em;
+  }
+  
+  .slide_center_text{
+      margin-top: 1em;
+      text-align: center;
+  }
+  .slide_text{
+      line-height: 84px;
+      margin-right: 2em;
+      font-size: 125%;
+  }
+  .slide_line{
+      width: 100%;
+      text-align: center;
+      
+
+  }
+  .slide_line::after{
+    display: inline-block; 
+    margin: 0 0 3px 20px; 
+    height: 1px; content: " ";
+     text-shadow: none; 
+     background-color: #999; 
+     width: 40%;
+  }
+  .slide_line::before{
+    display: inline-block; 
+    margin: 0 20px 3px 0; 
+    height: 1px; content: " ";
+     text-shadow: none; 
+     background-color: #999; 
+     width: 40%;
+  }
