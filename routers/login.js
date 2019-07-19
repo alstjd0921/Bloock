@@ -35,12 +35,12 @@ router.post('/certreg', function(req, res){
       let sex = value.substr(6,1);
       let birth = value.substr(0,6);
       let date = + new Date();
-      console.log(name + type + sex + birth + date);
+      console.log(name + '\n' + type + '\n' + sex + '\n' + birth + '\n' + date);
     }else{
       let sex = value.substr(5,1);
       let birth = value.substr(0,5);
       let date = + new Date();
-      console.log(name + type + sex + birth + date);
+      console.log(name + '\n' + type + '\n' + sex + '\n' + birth + '\n' + date);
     }
   });
 });
