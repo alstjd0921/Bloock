@@ -17,7 +17,7 @@ contract BloockBase {
     
     function createCert(uint _donateDate,uint _birth, uint _gender, string memory _name, string memory _kind) public {
         BloodCertInfo memory _newCert = BloodCertInfo(_donateDate,_birth,_gender,_name,_kind);
-        uint256 id = BloodCerts.push(_newCert);
+        uint256 id = BloodCerts.push(_newCert) -1;
         certToOwner[id] = msg.sender;
         ownerCertCount[msg.sender]++;
         emit CertCreated(_name,_birth);
