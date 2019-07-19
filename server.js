@@ -30,6 +30,7 @@ app.use(session);
 app.use(express.static(__dirname + '/'));
 app.use('/', index);
 app.use('/', login);
+app.use('/index', load);
 
 app.all('*',
   function (req, res) {
