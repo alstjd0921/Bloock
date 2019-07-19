@@ -2,11 +2,11 @@ const express = require("express");
 const router = express.Router();
 const db = require('../db/connector.js');
 
-router.get('/',function(req, res){
+router.get('/certreg',function(req, res){
   res.sendFile(__dirname + '../view/certreg.html');
 });
 
-router.post('/', function(req, res){
+router.post('/certreg', function(req, res){
   let name = req.body.name;
   let type = req.body.type;
 
