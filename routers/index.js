@@ -22,6 +22,7 @@ router.get('/', function(req, res){
     res.redirect('/loginpage');
   }
   else {
+    console.log('[index/index]');
     id = user.id;
     const selectQuery = "SELECT * FROM blood where user = ?";
     db.query(selectQuery, [id], function(err, result){
@@ -37,6 +38,7 @@ router.get('/', function(req, res){
 });
 
 router.get('/logout', function(req, res){
+  console.log('[index/logout]');
   req.session.destroy();
   res.redirect('/')
 });
