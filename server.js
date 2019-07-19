@@ -6,6 +6,7 @@ const db = require('./db/connector.js');
 const expressSession = require('express-session');
 const index = require('./routers/index.js');
 const login = require('./routers/login.js');
+const login = require('./routers/load.js');
 const bodyParser = require("body-parser");
 
 // view engine setup
