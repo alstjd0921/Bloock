@@ -4,7 +4,7 @@ const db = require('../db/connector.js');
 
 router.get('/login', function(req, res){
   res.render('login', {
-    
+
   })
 });
 
@@ -17,8 +17,11 @@ router.post('/register', function(req, res){
   const insertQuery = "INSERT INTO user (name, passwd, id, resident) VALUES(?, ?, ?, ?)";
   console.log("[login/register]");
   db.query(insertQuery, [name, passwd, id, resident], function(err, result){
-    if(err) throw err;
-    return res.status(200).json({message:"Register Success"});
+    //if(err) throw err;
+    res.render('login', {
+      list: result
+    })
+    //return res.status(200).json({message:"Register Success"});
   });
 });
 
@@ -29,18 +32,29 @@ router.post('/login', function(req,res){
   const selectQuery = "SELECT * FROM user where id = ? and passwd = ?";
   console.log("[login/login]");
   db.query(selectQuery, [id, passwd], function(err, result){
-    if(err) throw err;
+    //if(err) throw err;
     if(result.length == 0){
-      return res.status(401).json({message:"Login Fail"});
+      res.render('login', {
+        list: result
+      })
+      //return res.status(401).json({message:"Login Fail"});
     }else if(result[0].passwd == passwd){
       req.session.user = {
         id : id,
         name : result[0].name,
         authorized : true
       };
-      return res.status(200).json({message:"Login Success"});
+      res.render('index', {
+        list: result,
+        name: user.name,
+        '헌혈증': user
+      })
+      //return res.status(200).json({message:"Login Success"});
     }else{
-      return res.status(401).json({message:"Login Fail"});
+      res.render('login', {
+        list: result
+      })
+      //return res.status(401).json({message:"Login Fail"});
     }
   });
 });
