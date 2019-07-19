@@ -106,7 +106,6 @@ li {
     background: #666;
 }
 .blood-donation-box{
-    height: 50px;;
 
 }
 
@@ -200,15 +199,14 @@ body {
 
 .slide_box{
     background-color: #FFF;
-    margin-top: 10%;
-      margin-left: 20%;
-      width: 1200px;
-      height: 700px;
-      border-radius: 10px 10px 0;
+    margin: auto;
+      width: 900px;
+      height: 800px;
+      border-radius: 0 10px 10px;
       
   }
   .slide_image{
-      width: 600px;
+      width: 400px;
       height : 500px;
       background-image: url(https://w.namu.la/s/30ffd10db08b78de532f538f5b2f1ec4a7ed11f2641435faa9e788a9686c3a1966c765f35aeead208bd42140ceb8d8b802f3c4f060d435a4cfb955cdf88e4786f5b2d25bde92c22bcb2742deb65be03aaa289cadd6234853d85446d74aaf9d2c);
       
