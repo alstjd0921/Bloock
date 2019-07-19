@@ -36,7 +36,6 @@ router.post('/login', function(req,res){
     //if(err) throw err;
     if(result.length == 0){
       res.render('login', {
-        list: result
       });
       //return res.status(401).json({message:"Login Fail"});
     }else if(result[0].passwd == passwd){
@@ -54,7 +53,6 @@ router.post('/login', function(req,res){
       //return res.status(200).json({message:"Login Success"});
     }else{
       res.render('login', {
-        list: result
       });
       //return res.status(401).json({message:"Login Fail"});
     }
