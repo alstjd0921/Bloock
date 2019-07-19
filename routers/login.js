@@ -37,18 +37,16 @@ router.post('/login', function(req,res){
       res.render('login', {
       });
       //return res.status(401).json({message:"Login Fail"});
-    }else if(result[0].passwd == passwd){
-      res.redirect('/index');
+    }else if(result[0].passwd == passwd
       req.session.user = {
         id : id,
         name : result[0].name,
         authorized : true
       };
-      //return res.status(200).json({message:"Login Success"});
+      res.redirect('/index');
     }else{
       res.render('login', {
       });
-      //return res.status(401).json({message:"Login Fail"});
     }
   });
 });
@@ -56,7 +54,7 @@ router.post('/login', function(req,res){
 router.get('/index', function(req, res){
   let user = req.session.user;
   res.render('index', {
-    'name': user[0].name,
+    'name': user.name,
     '헌혈증': user
   });
 });
