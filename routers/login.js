@@ -9,7 +9,7 @@ router.get('/login', function(req, res){
 });
 
 router.post('/register', function(req, res){
-  let name = req.body.name;
+  let name = req.body.username;
   let passwd = crypto.createHash('sha512').update(crypto.createHash('sha512').update(req.body.RegisterPasswd).digest('base64')).digest('base64');
   let id = req.body.RegisterId;
   let resident = req.body.resident;
