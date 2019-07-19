@@ -285,7 +285,6 @@ css-doodle {
   clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
   transition: 0.5s;
 }
-
 #login-door {
   position: absolute;
   top: 0;
@@ -333,6 +332,7 @@ css-doodle {
   overflow: visible;
   color: var(--fresh-blood-color);
   letter-spacing: -0.1em;
+  border-top: 3px solid;
 }
 #join-form {
   position: relative;
@@ -362,7 +362,17 @@ css-doodle {
   overflow: visible;
   color: var(--fresh-blood-color);
   letter-spacing: -0.1em;
+  border-bottom: 3px solid;
 }
+#join-form.fade-out-login {
+	clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+	transition: 0.5s;
+}
+/* #login-form.fade-in-login {
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+	transition: 0.5s;
+} */
+
 
 .cursor-pointer {
   cursor: pointer;

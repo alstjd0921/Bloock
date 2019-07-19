@@ -18,10 +18,25 @@ document.querySelector("#to-join-button").addEventListener("click", function() {
 
     setTimeout(function() {
         document.querySelector("#join-form").classList.remove("display-none");
-
+        
         setTimeout(function() {
+            document.querySelector("#join-form").classList.remove("fade-out-login");
             document.querySelector("#login-form").classList.add("display-none");
             document.querySelector("#join-form").classList.add("fade-in-join");
+        }, 100);
+    }, 500)
+})
+
+
+document.querySelector("#to-login-button").addEventListener("click", function() {
+    document.querySelector("#join-form").classList.add("fade-out-login");
+
+    setTimeout(function() {
+        document.querySelector("#join-form").classList.add("display-none");
+        document.querySelector("#login-form").classList.remove("display-none");
+        
+        setTimeout(function() {
+            document.querySelector("#login-form").classList.remove("fade-out-join");
         }, 100);
     }, 500)
 })
