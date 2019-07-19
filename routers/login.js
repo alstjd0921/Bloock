@@ -21,7 +21,6 @@ router.post('/register', function(req, res){
     return res.status(200).json({message:"Register Success"});
   });
   res.render('login', {
-    list: result
   });
 });
 
