@@ -29,10 +29,16 @@ router.post('/certreg', function(req, res){
   const selectQuery = "SELECT * FROM user where id = ?";
   console.log("[certreg]");
   db.query(selectQuery, [name], function(err, result){
-    /*let sex = result[0].resident.substring(6,6);
-    let birth = result[0].resident.substring(0,5);
-    let date = + new Date();*/
-    console.log(result);
+    if(result[0].resident.length == 7){
+      let sex = result[0].resident.substring(6,6);
+      let birth = result[0].resident.substring(0,5);
+      let date = + new Date();
+    }else{
+      let sex = result[0].resident.substring(5,5);
+      let birth = result[0].resident.substring(0,4);
+      let date = + new Date();
+    }
+    console.log(name + type + sex + birth + date);
   });
 });
 
