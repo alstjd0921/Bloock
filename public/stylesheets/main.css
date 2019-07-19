@@ -124,60 +124,64 @@ html {
 #index-main-contents {
 	position: relative;
 	width: calc(100vw - 515px);
-	height: 200vh;
+	height: 190vh;
 	margin-left: auto;
 }
 #blood-donation-list {
 	height: 100vh;
+
+}
+.slide-page {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	align-content: space-around;
+	padding: 0 4rem !important;
+    box-sizing: border-box;
+}
+.blood-donation-item {
+	display: block;
 }
 
 
+/* 팝업 모달 */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 300; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
 
-/* 카드 */
-.columns {
-    padding: 1em;
-    margin: 1em;
-  }
-  
-  .cards {
-    background-color: white;
-    /*margin-bottom: 1em;*/
-    margin: 0 0.5em 1.5em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 1px 2px 3px #ccc;
-    display: block;
-    -webkit-column-break-inside: avoid;
-    transition: box-shadow ease-in-out 0.2s;
-    width : 500px;
-  }
-  
-  .cards:hover {
-    box-shadow: 2px 3px 10px #ccc;
-  }
-  
-  .card-head {
-    color: white;
-    padding-left: 1em;
-    min-height: 3em;
-    background: #b7141a;   
-    line-height: 48px;
-  }
-  
-  .card-text {
-    padding: 1em;
-  }
-  
+/* Modal Content/Box */
+.modal-content {
+	background-color: #fefefe;
+	margin: 15% auto; /* 15% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 50%; /* Could be more or less, depending on screen size */                          
+}
+/* The Close Button */
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
 
-  .font_size{
-      margin-left: 1em;
-      font-size: 80%
-  }
-  .card_float{
-      float: left;
-      margin-left: 1em;
-        
-  }
+
 
 
 
