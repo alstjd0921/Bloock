@@ -10,29 +10,37 @@ let asdf = [{
 }];
 
 router.get('/', function(req, res){
-  req.session.user = {
+  /*req.session.user = {
     id : "fuck",
     name : "fuck",
     authorized : true
-  };
+  };*/
   let user = req.session.user;
 
 
   if (user === undefined){
-    //res.redirect('/html/404.html');
+    res.redirect('/loginpage');
   }
   else {
+    console.log('[index/index]');
+    id = user.id;
     const selectQuery = "SELECT * FROM blood where user = ?";
-    db.query(selectQuery, ['test'], function(err, result){
-      // if(err) throw err;
-
+    db.query(selectQuery, [id], function(err, result){
       res.render('index', {
         list: result,
+        name: user.name,
         '헌혈증': user
       })
-      // return res.statue(200).json({list:result});
+      //if(err) throw err
+      //return res.statue(200).json({list:result});
     });
   }
+});
+
+router.get('/logout', function(req, res){
+  console.log('[index/logout]');
+  req.session.destroy();
+  res.redirect('/')
 });
 
 router.post('/blood',function(req, res){

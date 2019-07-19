@@ -74,8 +74,56 @@ css-doodle {
   max-width: 46rem;
 }
 
-/* 애니메이션 */
+/* 인풋 텍스트 스타일(배낌) */
+.md-input-text {
+	border: none;
+	outline: none;
+	padding: 8px 0;
+	font-size: 0.9em;
+	background-color: transparent;
+  }
+  .md-form-control {
+	position: relative;
+	margin-top: 25px;
+  }
+  .md-form-control.focus label,
+  .md-form-control .md-input-text:focus + label {
+	top: -10px;
+	font-size: 1rem;
+	color: #e91e63;
+  }
+  .md-form-control .md-input-text {
+	width: 100%;
+  }
+  .md-form-control .md-input-text:focus ~ .md-input-text-bar:after {
+	width: 100%;
+	left: 0;
+  }
+  .md-form-control label {
+	position: absolute;
+	top: 8px;
+	left: 0;
+	font-size: 1.5rem;
+	transition: 0.2s ease;
+  }
+  .md-form-control .md-input-text-bar {
+	display: block;
+	width: 100%;
+	height: 1px;
+	background-color: rgba(0,0,0,0.3);
+  }
+  .md-form-control .md-input-text-bar:after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	width: 0;
+	height: 2px;
+	background-color: #e91e63;
+	transition: 0.2s ease;
+  }
+  
 
+/* 애니메이션 */
 
 /* 메인 */
 #main-door {
@@ -89,7 +137,7 @@ css-doodle {
   line-height: 1.4;
   overflow: hidden;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  
+
   transform: perspective(1000px);
   transform-style: preserve-3d;
 }
@@ -148,10 +196,64 @@ css-doodle {
 
   transform: translateZ(20px);
 }
+.button-submit {
+	display: block;
+  margin: 2rem 0 0 auto;
+  width: 200px;
+  font-size: 1.125rem;
+  line-height: 2rem;
+  border: 2px solid var(--fresh-blood-color);
+  color: #ffffff;
+  background: var(--fresh-blood-color);
+  font-weight: 500;
+  transition: 0.2s;
+}
+.md-form-control > input {
+	line-height: 2rem;
+	font-size: 1.5rem;
+    font-weight: 100;
+}
 
 #main-door.fade-out-login {
-	clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-	transition: 0.5s;
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  transition: 0.5s;
+}
+
+#login-door {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+}
+#login-form {
+  min-width: 700px;
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.9);
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  transition: 0.5s;
+}
+
+#login-form.fade-in-login {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  transition: 0.5s;
+}
+
+.login-phrases {
+  font-size: 300%;
+  margin: 0 0 1.5rem;
+  letter-spacing: -0.1em;
+}
+
+.to-join-button {
+	position: relative;
+	right: calc(3rem + 50px);
+	background-color: var(--blood-color);
+	width: 50px;
+	height: 100%;
+
 }
 
 
@@ -161,13 +263,22 @@ css-doodle {
 .position-relative {
   position: relative;
 }
+.sizing-border {
+	box-sizing: border-box;
+}
 .flexY {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 .XYfull {
-	width: fit-content;
-	height: 100vh;
+  width: fit-content;
+  height: 100vh;
+}
+.display-none {
+  display: none;
+}
+.display-block {
+  display: block;
 }
 
 
