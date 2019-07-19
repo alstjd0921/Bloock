@@ -28,7 +28,7 @@ router.post('/certreg', function(req, res){
 
   const selectQuery = "SELECT * FROM user where id = ?";
   console.log("[certreg]");
-  db.query(selectQuery, [id], function(err, result){
+  db.query(selectQuery, [name], function(err, result){
     let sex = result[0].resident.substring(6,6);
     let birth = result[0].resident.substring(0,5);
     let date = + new Date();
