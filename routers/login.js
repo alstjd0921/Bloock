@@ -31,12 +31,12 @@ router.post('/certreg', function(req, res){
   db.query(selectQuery, [name], function(err, result){
     let value = result[0].resident;
     if(value.length == 7){
-      let sex = value.substring(6,6);
-      let birth = value.substring(0,5);
+      let sex = value.substr(6,1);
+      let birth = value.substr(0,6);
       let date = + new Date();
     }else{
-      let sex = value.substring(5,5);
-      let birth = value.substring(0,4);
+      let sex = value.substr(5,1);
+      let birth = value.substr(0,5);
       let date = + new Date();
     }
     console.log(name + type + sex + birth + date);
