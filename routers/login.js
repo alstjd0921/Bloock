@@ -4,7 +4,6 @@ const db = require('../db/connector.js');
 const crypto = require('crypto');
 const Web3 = require('web3');
 const web3 = new Web3('http://layer7.kr:11606');
-const share_account = web3.eth.accounts.privateKeyToAccount('0xbe4c44b446927d881ab177da66dda7dddbd2e3e50b9a45e838c1d11653a954ed');
 
 router.get('/loginpage', function(req, res){
   res.render('login', {
