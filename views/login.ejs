@@ -51,7 +51,7 @@
     </div>
     <div id="login-door" class="flexY">
         <!-- 로그인 폼 -->
-        <form id="login-form" class="" action="/login" method="POST">
+        <form id="login-form" class="display-none" action="/login" method="POST">
             <h1 class="login-phrases">로그인</h1>
 
             <div class="md-form-control">
@@ -69,28 +69,68 @@
             <button type="submit" class="button-submit cursor-pointer btn material-design" data-color="#ffffff">로그인</button>
 
             
-            <div class="to-join-button">
+            <div id="to-join-button" class="to-join-button cursor-pointer">
                 회원가입
             </div>
         </form>
 
         <!-- 회원가입 폼 -->
         <form id="join-form" class="display-none" action="/register" method="POST">
+            <h1 class="login-phrases">회원가입</h1>
+
+            <div class="md-form-control">
+                <input id="RegisterId" name="RegisterId" type="text" class="md-input-text" />
+                <label for="RegisterId">ID</label>
+                <span class="md-input-text-bar"></span>
+            </div>
+
+            <div class="md-form-control">
+                <input id="RegisterPasswd" name="RegisterPasswd" type="password" class="md-input-text" />
+                <label for="RegisterPasswd">Password</label>
+                <span class="md-input-text-bar"></span>
+            </div>
+            
+            <div id="RegisterConfirmPasswdCover" class="md-form-control">
+                <input id="RegisterConfirmPasswd" type="password" class="md-input-text" />
+                <label for="RegisterConfirmPasswd">Confirm Password</label>
+                <span class="md-input-text-bar"></span>
+            </div>
+
+            <div class="md-form-control">
+                <input id="username" name="username" type="text" class="md-input-text" />
+                <label for="username">Name</label>
+                <span class="md-input-text-bar"></span>
+            </div>
+
+            <div class="md-form-control">
+                <input id="resident" name="resident" type="text" class="md-input-text" maxlength="7"/>
+                <label for="resident">주민등록번호 앞자리6개 뒷자리1개</label>
+                <span class="md-input-text-bar"></span>
+            </div>
+
+            <button type="submit" class="button-submit cursor-pointer btn material-design" data-color="#ffffff">회원가입</button>
+
+            
+            <div id="to-login-button" class="to-login-button cursor-pointer">
+                로그인
+            </div>
+
+
+
             <!-- 아이디 -->
-            <input type="text" name="RegisterId">
+            <!-- <input type="text" name="RegisterId"> -->
             <!-- 비밀번호 -->
-            <input type="password" name="RegisterPasswd">
+            <!-- <input type="password" name="RegisterPasswd"> -->
             <!-- 비밀번호 확인 -->
-            <input type="password">
+            <!-- <input type="password"> -->
             <!-- 이름 -->
-            <input type="text" name="username">
+            <!-- <input type="text" name="username"> -->
             <!-- 주민등록번호 앞자리6개 뒷자리1개 -->
-            <input type="number" name="resident">
-            <input type="submit">
+            <!-- <input type="number" name="resident"> -->
+            <!-- <input type="submit"> -->
         </form>
     </div>
-    </div>
-
+    <div id="inconsistency-toast">비밀번호가 일치하지 않습니다.</div>
 
 
 

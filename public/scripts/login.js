@@ -4,9 +4,46 @@ document.querySelector("#entrance-button").addEventListener("click", function ()
         document.querySelector("#main-door").classList.add("display-none")
         document.querySelector("#login-door").classList.remove("display-none");
 
-        document.querySelector("#login-form").classList.add("fade-in-login");
+        document.querySelector("#login-form").classList.remove("display-none");
+        setTimeout(function() {
+            document.querySelector("#join-form").classList.add("display-none");
+            document.querySelector("#login-form").classList.add("fade-in-login");
+        }, 100);
+
     }, 500)
 })
+
+document.querySelector("#to-join-button").addEventListener("click", function() {
+    document.querySelector("#login-form").classList.add("fade-out-join");
+
+    setTimeout(function() {
+        document.querySelector("#join-form").classList.remove("display-none");
+
+        setTimeout(function() {
+            document.querySelector("#login-form").classList.add("display-none");
+            document.querySelector("#join-form").classList.add("fade-in-join");
+        }, 100);
+    }, 500)
+})
+
+
+
+// 비밀번호 확인
+document.querySelector("#RegisterConfirmPasswd").addEventListener("focusout", function() {
+    if (document.querySelector("#RegisterConfirmPasswd").value != document.querySelector("#RegisterPasswd").value) {
+        document.querySelector("#RegisterConfirmPasswdCover").classList.add("shake");
+        function inconsistencyToast() {
+            var x = document.querySelector("#inconsistency-toast");
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        }
+        inconsistencyToast();
+        setTimeout(function() {
+            document.querySelector("#RegisterConfirmPasswdCover").classList.remove("shake");
+        }, 1000);
+    }
+})
+
 
 
 

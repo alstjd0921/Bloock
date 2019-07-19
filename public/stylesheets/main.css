@@ -74,56 +74,122 @@ css-doodle {
   max-width: 46rem;
 }
 
+/* 토스트 */
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#inconsistency-toast {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#inconsistency-toast.show {
+  visibility: visible; /* Show the snackbar */
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
 /* 인풋 텍스트 스타일(배낌) */
 .md-input-text {
-	border: none;
-	outline: none;
-	padding: 8px 0;
-	font-size: 0.9em;
-	background-color: transparent;
-  }
-  .md-form-control {
-	position: relative;
-	margin-top: 25px;
-  }
-  .md-form-control.focus label,
-  .md-form-control .md-input-text:focus + label {
-	top: -10px;
-	font-size: 1rem;
-	color: #e91e63;
-  }
-  .md-form-control .md-input-text {
-	width: 100%;
-  }
-  .md-form-control .md-input-text:focus ~ .md-input-text-bar:after {
-	width: 100%;
-	left: 0;
-  }
-  .md-form-control label {
-	position: absolute;
-	top: 8px;
-	left: 0;
-	font-size: 1.5rem;
-	transition: 0.2s ease;
-  }
-  .md-form-control .md-input-text-bar {
-	display: block;
-	width: 100%;
-	height: 1px;
-	background-color: rgba(0,0,0,0.3);
-  }
-  .md-form-control .md-input-text-bar:after {
-	content: '';
-	position: absolute;
-	left: 50%;
-	width: 0;
-	height: 2px;
-	background-color: #e91e63;
-	transition: 0.2s ease;
-  }
-  
+  border: none;
+  outline: none;
+  padding: 8px 0;
+  font-size: 0.9em;
+  background-color: transparent;
+}
+.md-form-control {
+  position: relative;
+  margin-top: 25px;
+}
+.md-form-control.focus label,
+.md-form-control .md-input-text:focus + label {
+  top: -10px;
+  font-size: 1rem;
+  color: #e91e63;
+}
+.md-form-control .md-input-text {
+  width: 100%;
+}
+.md-form-control .md-input-text:focus ~ .md-input-text-bar:after {
+  width: 100%;
+  left: 0;
+}
+.md-form-control label {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  font-size: 1.5rem;
+  transition: 0.2s ease;
+}
+.md-form-control .md-input-text-bar {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.md-form-control .md-input-text-bar:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #e91e63;
+  transition: 0.2s ease;
+}
 
 /* 애니메이션 */
+.shake {
+  animation: shake 1s;
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
 
 /* 메인 */
 #main-door {
@@ -197,7 +263,7 @@ css-doodle {
   transform: translateZ(20px);
 }
 .button-submit {
-	display: block;
+  display: block;
   margin: 2rem 0 0 auto;
   width: 200px;
   font-size: 1.125rem;
@@ -207,11 +273,12 @@ css-doodle {
   background: var(--fresh-blood-color);
   font-weight: 500;
   transition: 0.2s;
+  letter-spacing: -0.1em;
 }
 .md-form-control > input {
-	line-height: 2rem;
-	font-size: 1.5rem;
-    font-weight: 100;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  font-weight: 100;
 }
 
 #main-door.fade-out-login {
@@ -227,7 +294,7 @@ css-doodle {
   height: 100vh;
 }
 #login-form {
-	position: relative;
+  position: relative;
   min-width: 700px;
   max-width: 50%;
   margin: 0 auto;
@@ -242,6 +309,10 @@ css-doodle {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   transition: 0.5s;
 }
+#login-form.fade-out-join {
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transition: 0.5s;
+}
 
 .login-phrases {
   font-size: 300%;
@@ -250,19 +321,48 @@ css-doodle {
 }
 
 .to-join-button {
-	position: absolute;
-	right: 0;
-	bottom: 0px;
-	left: 0;
-    z-index: 10;
-	background-color: #ffffff;
-	padding-left: 3rem;
-	line-height: 30px;
-	height: 30px;
-	overflow: visible;
-	color: var(--fresh-blood-color);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  background-color: #ffffff;
+  padding-left: 3rem;
+  line-height: 30px;
+  height: 30px;
+  overflow: visible;
+  color: var(--fresh-blood-color);
+  letter-spacing: -0.1em;
 }
-
+#join-form {
+  position: relative;
+  min-width: 700px;
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 3rem;
+  padding-top: 5rem;
+  background: rgba(255, 255, 255, 0.9);
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  transition: 0.5s;
+}
+#join-form.fade-in-join {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transition: 0.5s;
+}
+.to-login-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  background-color: #ffffff;
+  padding-left: 3rem;
+  line-height: 30px;
+  height: 30px;
+  overflow: visible;
+  color: var(--fresh-blood-color);
+  letter-spacing: -0.1em;
+}
 
 .cursor-pointer {
   cursor: pointer;
@@ -271,7 +371,7 @@ css-doodle {
   position: relative;
 }
 .sizing-border {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 .flexY {
   display: flex;
