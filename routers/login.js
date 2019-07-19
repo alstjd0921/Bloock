@@ -38,27 +38,23 @@ router.post('/login', function(req,res){
       });
       //return res.status(401).json({message:"Login Fail"});
     }else if(result[0].passwd == passwd){
-      res.redirect('/index');
       req.session.user = {
         id : id,
         name : result[0].name,
         authorized : true
       };
+      let user = req.session.user;
+      res.render('index', {
+        list: result,
+        name: user.name,
+        '헌혈증': user
+      });
       //return res.status(200).json({message:"Login Success"});
     }else{
       res.render('login', {
       });
       //return res.status(401).json({message:"Login Fail"});
     }
-  });
-});
-
-router.post('/index', function(req, res){
-  let user = req.session.user;
-  res.render('index', {
-    list: result,
-    name: user.name,
-    '헌혈증': user
   });
 });
 
