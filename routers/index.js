@@ -28,6 +28,7 @@ router.get('/', function(req, res){
 
       res.render('index', {
         list: result,
+        name: user.name,
         '헌혈증': user
       })
       // return res.statue(200).json({list:result});
