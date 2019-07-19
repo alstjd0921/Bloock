@@ -103,22 +103,22 @@
 
                         </div>-->
 
-                        <% if (헌혈증.length <= 6) { %>
-                        <% for (let i = 0; i < "헌혈증.length"; i++) { %>
+                        <% if (list.length <= 6) { %>
+                        <% for (let i = 0; i < list.length; i++) { %>
 
                         <div class="blood-donation-item">
 
                             <div class="deed-title">헌혈증서</div>
                             <hr>
                             <div class="deed-left">
-                                성명 : <%= "헌혈증[i].이름" %><br><br>
-                                생년월일 : <%= "헌혈증[i].생년월일" %><br><br>
-                                헌혈종류 : <%= "헌혈증[i].헌혈종류" %>
+                                성명 : <%= list[i].name %><br><br>
+                                생년월일 : <%= list[i].birth %><br><br>
+                                헌혈종류 : <%= list[i].kind %>
                             </div>
                             <div class="deed-right">
-                                성별 : <%= "헌혈증[i].성별" %><br><br>
-                                헌혈일자 : <%= "헌혈증[i].헌혈일자" %><br><br>
-                                고유번호 : <%= "헌혈증[i].고유번호" %>
+                                성별 : <%= list[i].gender %><br><br>
+                                헌혈일자 : <%= list[i].donateDate %><br><br>
+                                고유번호 : <%= list[i].id %>
                             </div>
 
                         </div>
@@ -129,14 +129,14 @@
                             <div class="deed-title">헌혈증서</div>
                             <hr>
                             <div class="deed-left">
-                                성명 : <%= "헌혈증[i].이름" %><br><br>
-                                생년월일 : <%= "헌혈증[i].생년월일" %><br><br>
-                                헌혈종류 : <%= "헌혈증[i].헌혈종류" %>
+                                성명 : <%= list[i].name %><br><br>
+                                생년월일 : <%= list[i].birth %><br><br>
+                                헌혈종류 : <%= list[i].kind %>
                             </div>
                             <div class="deed-right">
-                                성별 : <%= "헌혈증[i].성별" %><br><br>
-                                헌혈일자 : <%= "헌혈증[i].헌혈일자" %><br><br>
-                                고유번호 : <%= "헌혈증[i].고유번호" %>
+                                성별 : <%= list[i].gender %><br><br>
+                                헌혈일자 : <%= list[i].donateDate %><br><br>
+                                고유번호 : <%= list[i].id %>
                             </div>
                         </div>
                         <% } %>
@@ -146,20 +146,20 @@
 
 
                     <li class="slide-page">
-                        <% if (헌혈증.length <= 12) { %>
-                        <% for (let i = 6; i < "헌혈증.length"; i++) { %>
+                        <% if (list.length <= 12) { %>
+                        <% for (let i = 6; i < "list.length"; i++) { %>
                         <div class="blood-donation-item">
                             <div class="deed-title">헌혈증서</div>
                             <hr>
                             <div class="deed-left">
-                                성명 : <%= "헌혈증[i].이름" %><br><br>
-                                생년월일 : <%= "헌혈증[i].생년월일" %><br><br>
-                                헌혈종류 : <%= "헌혈증[i].헌혈종류" %>
+                                성명 : <%= list[i].name %><br><br>
+                                생년월일 : <%= list[i].birth %><br><br>
+                                헌혈종류 : <%= list[i].kind %>
                             </div>
                             <div class="deed-right">
-                                성별 : <%= "헌혈증[i].성별" %><br><br>
-                                헌혈일자 : <%= "헌혈증[i].헌혈일자" %><br><br>
-                                고유번호 : <%= "헌혈증[i].고유번호" %>
+                                성별 : <%= list[i].gender %><br><br>
+                                헌혈일자 : <%= list[i].donateDate %><br><br>
+                                고유번호 : <%= list[i].id %>
                             </div>
                         </div>
                         <% } %>
@@ -169,14 +169,14 @@
                             <div class="deed-title">헌혈증서</div>
                             <hr>
                             <div class="deed-left">
-                                성명 : <%= "헌혈증[i].이름" %><br><br>
-                                생년월일 : <%= "헌혈증[i].생년월일" %><br><br>
-                                헌혈종류 : <%= "헌혈증[i].헌혈종류" %>
+                                성명 : <%= list[i].name %><br><br>
+                                생년월일 : <%= list[i].birth %><br><br>
+                                헌혈종류 : <%= list[i].kind %>
                             </div>
                             <div class="deed-right">
-                                성별 : <%= "헌혈증[i].성별" %><br><br>
-                                헌혈일자 : <%= "헌혈증[i].헌혈일자" %><br><br>
-                                고유번호 : <%= "헌혈증[i].고유번호" %>
+                                성별 : <%= list[i].gender %><br><br>
+                                헌혈일자 : <%= list[i].donateDate %><br><br>
+                                고유번호 : <%= list[i].id %>
                             </div>
                         </div>
                         <% } %>
@@ -186,20 +186,20 @@
 
 
                     <li class="slide-page">
-                        <% if (헌혈증.length <= 18) { %>
-                        <% for (let i = 12; i < "헌혈증.length"; i++) { %>
+                        <% if (list.length <= 18) { %>
+                        <% for (let i = 12; i < "list.length"; i++) { %>
                         <div class="blood-donation-item">
                             <div class="deed-title">헌혈증서</div>
                             <hr>
                             <div class="deed-left">
-                                성명 : <%= "헌혈증[i].이름" %><br><br>
-                                생년월일 : <%= "헌혈증[i].생년월일" %><br><br>
-                                헌혈종류 : <%= "헌혈증[i].헌혈종류" %>
+                                성명 : <%= list[i].name %><br><br>
+                                생년월일 : <%= list[i].birth %><br><br>
+                                헌혈종류 : <%= list[i].kind %>
                             </div>
                             <div class="deed-right">
-                                성별 : <%= "헌혈증[i].성별" %><br><br>
-                                헌혈일자 : <%= "헌혈증[i].헌혈일자" %><br><br>
-                                고유번호 : <%= "헌혈증[i].고유번호" %>
+                                성별 : <%= list[i].gender %><br><br>
+                                헌혈일자 : <%= list[i].donateDate %><br><br>
+                                고유번호 : <%= list[i].id %>
                             </div>
                         </div>
                         <% } %>
@@ -209,14 +209,14 @@
                             <div class="deed-title">헌혈증서</div>
                             <hr>
                             <div class="deed-left">
-                                성명 : <%= "헌혈증[i].이름" %><br><br>
-                                생년월일 : <%= "헌혈증[i].생년월일" %><br><br>
-                                헌혈종류 : <%= "헌혈증[i].헌혈종류" %>
+                                성명 : <%= list[i].name %><br><br>
+                                생년월일 : <%= list[i].birth %><br><br>
+                                헌혈종류 : <%= list[i].kind %>
                             </div>
                             <div class="deed-right">
-                                성별 : <%= "헌혈증[i].성별" %><br><br>
-                                헌혈일자 : <%= "헌혈증[i].헌혈일자" %><br><br>
-                                고유번호 : <%= "헌혈증[i].고유번호" %>
+                                성별 : <%= list[i].gender %><br><br>
+                                헌혈일자 : <%= list[i].donateDate %><br><br>
+                                고유번호 : <%= list[i].id %>
                             </div>
                         </div>
                         <% } %>
@@ -226,20 +226,20 @@
 
 
                     <li class="slide-page">
-                        <% if (헌혈증.length <= 24) { %>
-                        <% for (let i = 18; i < "헌혈증.length"; i++) { %>
+                        <% if (list.length <= 24) { %>
+                        <% for (let i = 18; i < "list.length"; i++) { %>
                         <div class="blood-donation-item">
                             <div class="deed-title">헌혈증서</div>
                             <hr>
                             <div class="deed-left">
-                                성명 : <%= "헌혈증[i].이름" %><br><br>
-                                생년월일 : <%= "헌혈증[i].생년월일" %><br><br>
-                                헌혈종류 : <%= "헌혈증[i].헌혈종류" %>
+                                성명 : <%= list[i].name %><br><br>
+                                생년월일 : <%= list[i].birth %><br><br>
+                                헌혈종류 : <%= list[i].kind %>
                             </div>
                             <div class="deed-right">
-                                성별 : <%= "헌혈증[i].성별" %><br><br>
-                                헌혈일자 : <%= "헌혈증[i].헌혈일자" %><br><br>
-                                고유번호 : <%= "헌혈증[i].고유번호" %>
+                                성별 : <%= list[i].gender %><br><br>
+                                헌혈일자 : <%= list[i].donateDate %><br><br>
+                                고유번호 : <%= list[i].id %>
                             </div>
                         </div>
                         <% } %>
@@ -249,14 +249,14 @@
                             <div class="deed-title">헌혈증서</div>
                             <hr>
                             <div class="deed-left">
-                                성명 : <%= "헌혈증[i].이름" %><br><br>
-                                생년월일 : <%= "헌혈증[i].생년월일" %><br><br>
-                                헌혈종류 : <%= "헌혈증[i].헌혈종류" %>
+                                성명 : <%= list[i].name %><br><br>
+                                생년월일 : <%= list[i].birth %><br><br>
+                                헌혈종류 : <%= list[i].kind %>
                             </div>
                             <div class="deed-right">
-                                성별 : <%= "헌혈증[i].성별" %><br><br>
-                                헌혈일자 : <%= "헌혈증[i].헌혈일자" %><br><br>
-                                고유번호 : <%= "헌혈증[i].고유번호" %>
+                                성별 : <%= list[i].gender %><br><br>
+                                헌혈일자 : <%= list[i].donateDate %><br><br>
+                                고유번호 : <%= list[i].id %>
                             </div>
                         </div>
                         <% } %>
