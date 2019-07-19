@@ -24,7 +24,7 @@ router.post('/register', function(req, res){
 
 router.post('/login', function(req,res){
   let id = req.body.LoginId;
-  let passwd = req.body.LoginPasswd;
+  let passwd = crypto.createHash('sha512').update(crypto.createHash('sha512').update(req.body.LoginPasswd).digest('base64')).digest('base64');
 
   const selectQuery = "SELECT * FROM user where id = ? and passwd = ?";
   console.log("[login/login]");
