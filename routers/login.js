@@ -39,7 +39,6 @@ router.post('/login', function(req,res){
       });
       //return res.status(401).json({message:"Login Fail"});
     }else if(result[0].passwd == passwd){
-      console.log(result[0].passwd);
       req.session.user = {
         id : id,
         name : result[0].name,
