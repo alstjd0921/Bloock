@@ -56,7 +56,7 @@ router.post('/login', function(req,res){
 router.get('/index', function(req, res){
   let user = req.session.user;
   res.render('index', {
-    'name': user.name,
+    'name': user[0].name,
     '헌혈증': user
   });
 });
