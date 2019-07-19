@@ -6,11 +6,18 @@ const db = require('./db/connector.js');
 const expressSession = require('express-session');
 const index = require('./routers/index.js');
 const login = require('./routers/login.js');
+const bodyParser = require("body-parser");
 
 // view engine setup
 app.set('view engine', 'html');
 app.set('views', path.join(__dirname, 'views'));
 app.engine('html',require('ejs').renderFile);
+
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+app.use(bodyParser.json());
 
 const session = expressSession({
   secret: 'my key',
