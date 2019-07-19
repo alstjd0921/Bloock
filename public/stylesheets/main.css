@@ -36,10 +36,6 @@ html {
   width: 100%;
   overflow: hidden;
 }
-
-css-doodle {
-}
-
 .cell {
   animation: rotate 10s infinite;
   opacity: 0.2;
@@ -52,6 +48,138 @@ css-doodle {
     transform: rotate(360deg);
   }
 }
+.doodle-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 500px;
+	height: 100vh;
+}
+
+/* 두들 위의 해더 */
+#left-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 200;
+	width: 500px;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#header-paper {
+	overflow: hidden;
+	transform: perspective(1000px);
+	transform-style: preserve-3d;
+}
+#header-paper > .cover {
+	height: auto;
+	padding: 3rem;
+	cursor: default;
+	background: #f9fcfa;
+	border: 1px solid #dee8e2;
+	border-radius: 3px;
+  
+	background: rgba(255, 255, 255, 0.9);
+	border-radius: 0;
+	border: 0;
+	--polygon: polygon(0 0, calc(100% - 35px) 0, 100% 35px, 100% 100%, 0 100%);
+	clip-path: var(--polygon);
+  }
+  #header-paper:after {
+	content: "";
+	position: absolute;
+	width: 50px;
+	height: 1px;
+	right: 0;
+	top: 0;
+	border: 0;
+	transform-origin: 0 0;
+	transform: translate(12px) rotate(45deg);
+	box-shadow: 0 -5px 0 0 rgba(255, 255, 255, 0.8),
+	  0 -8px 0 0 rgba(255, 255, 255, 0.6), 0 -12px 0 0 rgba(255, 255, 255, 0.4),
+	  0 -17px 0 0 rgba(255, 255, 255, 0.2), 0 -22px 0 0 rgba(255, 255, 255, 0.2);
+  }
+.small-phrases {
+	font-size: 1.5rem;
+	font-weight: 100;
+}
+.big-phrases {
+	margin: 0;
+	font-size: 7rem;
+	font-weight: 100;
+	transform: translateZ(20px);
+}
+.align-center {
+	text-align: center;
+}
+.align-right {
+	text-align: right;
+}
+
+
+/* index의 메인 컨텐츠 */
+#index-main-contents {
+	position: relative;
+	width: calc(100vw - 515px);
+	height: 200vh;
+	margin-left: auto;
+}
+#blood-donation-list {
+	height: 100vh;
+}
+
+
+
+/* 카드 */
+.columns {
+    padding: 1em;
+    margin: 1em;
+  }
+  
+  .cards {
+    background-color: white;
+    /*margin-bottom: 1em;*/
+    margin: 0 0.5em 1.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 1px 2px 3px #ccc;
+    display: block;
+    -webkit-column-break-inside: avoid;
+    transition: box-shadow ease-in-out 0.2s;
+    width : 500px;
+  }
+  
+  .cards:hover {
+    box-shadow: 2px 3px 10px #ccc;
+  }
+  
+  .card-head {
+    color: white;
+    padding-left: 1em;
+    min-height: 3em;
+    background: #b7141a;   
+    line-height: 48px;
+  }
+  
+  .card-text {
+    padding: 1em;
+  }
+  
+
+  .font_size{
+      margin-left: 1em;
+      font-size: 80%
+  }
+  .card_float{
+      float: left;
+      margin-left: 1em;
+        
+  }
+
+
 
 /* 버튼 파도 */
 .btn-round {
