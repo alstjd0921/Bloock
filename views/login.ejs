@@ -11,28 +11,28 @@
     <div class="doodle-container">
         <css-doodle grid="7">
             :doodle {
-                size: 100vmax;
-                background: #b7141a;
-                overflow: hidden;
+            size: 100vmax;
+            background: #b7141a;
+            overflow: hidden;
             }
             clip-path: @shape(bean);
             background: hsla(
-                calc(300 + 3 * @index()), 75%, 100%, @rand(.8)
+            calc(300 + 3 * @index()), 75%, 100%, @rand(.8)
             );
             transition: .2s ease @rand(300ms);
             transform:
-                scale(@rand(.2, 1.5))
-                translate3d(
-                    @rand(-50%, 50%),
-                    @rand(-50%, 50%),
-                    0
-                )
-                rotate(@rand(0deg, 360deg));
+            scale(@rand(.2, 1.5))
+            translate3d(
+            @rand(-50%, 50%),
+            @rand(-50%, 50%),
+            0
+            )
+            rotate(@rand(0deg, 360deg));
         </css-doodle>
     </div>
 
     <div class="flexY XYfull">
-        <div id="main-door" >
+        <div id="main-door">
             <div class="cover">
                 <h1 id="open-phrases">당신의 <br>블록체인 <br>헌혈증 입니다</h1>
                 <div class="sub-phrases">
@@ -53,26 +53,37 @@
         <!-- 로그인 폼 -->
         <form id="login-form" class="" action="/login" method="POST">
             <h1 class="login-phrases">로그인<h1>
-            <input type="text" name="LoginId"> <!-- 아이디 -->
-            <input type="password" name="LoginPasswd"> <!-- 비밀번호 -->
-            <input type="submit">
+
+                <div class="md-form-control">
+                    <input id="LoginId" name="LoginId" type="text" class="md-input-text" />
+                    <label for="LoginId">ID</label>
+                    <span class="md-input-text-bar"></span>
+                </div>
+
+                <div class="md-form-control">
+                    <input id="LoginPasswd" name="LoginPasswd" type="password" class="md-input-text" />
+                    <label for="LoginPasswd">Password</label>
+                    <span class="md-input-text-bar"></span>
+                </div>
+
+                <button type="submit" class="button-submit cursor-pointer btn material-design" data-color="#ffffff">로그인</button>
         </form>
 
-            <!-- 회원가입 폼 -->
-            <form id="join-form" class="display-none" action="/register" method="POST">
-                <!-- 아이디 -->
-                <input type="text" name="RegisterId"> 
-                <!-- 비밀번호 -->
-                <input type="password" name="RegisterPasswd">
-                <!-- 비밀번호 확인 -->
-                <input type="password">
-                <!-- 이름 -->
-                <input type="text" name="username">
-                <!-- 주민등록번호 앞자리6개 뒷자리1개 -->
-                <input type="number" name="resident">
-                <input type="submit">
-            </form>
-        </div>
+        <!-- 회원가입 폼 -->
+        <form id="join-form" class="display-none" action="/register" method="POST">
+            <!-- 아이디 -->
+            <input type="text" name="RegisterId">
+            <!-- 비밀번호 -->
+            <input type="password" name="RegisterPasswd">
+            <!-- 비밀번호 확인 -->
+            <input type="password">
+            <!-- 이름 -->
+            <input type="text" name="username">
+            <!-- 주민등록번호 앞자리6개 뒷자리1개 -->
+            <input type="number" name="resident">
+            <input type="submit">
+        </form>
+    </div>
     </div>
 
 
