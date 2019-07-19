@@ -29,6 +29,7 @@ router.post('/login', function(req,res){
   const selectQuery = "SELECT * FROM user where id = ? and passwd = ?";
   console.log("[login/login]");
   db.query(selectQuery, [id, passwd], function(err, result){
+    console.log(passwd);
     //if(err) throw err;
     if(result.length == 0){
       res.render('login', {
