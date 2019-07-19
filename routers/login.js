@@ -44,7 +44,7 @@ router.post('/login', function(req,res){
       };
       res.render('index', {
         list: result,
-        name: user.name,
+        name: session.user.name,
         '헌혈증': user
       });
       //return res.status(200).json({message:"Login Success"});
