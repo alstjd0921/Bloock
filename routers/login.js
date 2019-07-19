@@ -42,9 +42,10 @@ router.post('/login', function(req,res){
         name : result[0].name,
         authorized : true
       };
+      let user = req.session.user;
       res.render('index', {
         list: result,
-        name: session.user.name,
+        name: user.name,
         '헌혈증': user
       });
       //return res.status(200).json({message:"Login Success"});
