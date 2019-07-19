@@ -29,7 +29,7 @@ router.post('/certreg', function(req, res){
   const selectQuery = "SELECT * FROM user where id = ?";
   console.log("[certreg]");
   db.query(selectQuery, [name], function(err, result){
-    let value = result[0].resident;
+    var value = result[0].resident;
     if(value.length == 7){
       let sex = value.substr(6,1);
       let birth = value.substr(0,6);
