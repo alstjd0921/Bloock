@@ -306,12 +306,13 @@ router.get('/', function(req, res){
         for(var i = 0; i < indices.length; i++) {
           let id = parseInt(indices[i]._hex,16);
           let obj = await contract.methods.BloodCerts(parseInt(id)).call();
+          let date = new Date(parseInt(obj.donateDate._hex,16));
           results.push({
             'name': obj.name,
             'birth' : parseInt(obj.birth._hex,16),
             'kind' : obj.kind,
             'gender' : parseInt(obj.gender._hex, 16) == 1 ? "남성" : "여성",
-            'donateDate' : parseInt(obj.gender._hex,16),
+            'donateDate' : date.toLocaleDateString(),
             'id': id});
         } 
         res.render('index', {
