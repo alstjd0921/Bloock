@@ -277,7 +277,7 @@ const router = express.Router();
 const db = require('../db/connector.js');
 const login = require("./login.js");
 const Web3 = require('web3');
-const web3 = new Web3('http://layer7.kr:11606');
+const web3 = new Web3('http://127.0.0.1:7545');
 
 router.get('/', function(req, res){
   /*req.session.user = {
@@ -294,7 +294,7 @@ router.get('/', function(req, res){
   else {
     console.log('[index/index]');
     id = user.id;
-    const address = '0x6d8a011c99e5a2041b972551e9436ffcc60e5ee3';
+    const address = '0x3925fa618b4df1102f2ca1bf2670851bbb2fe472';
     const contract = new web3.eth.Contract(abi,address);
 
     const selectQuery = "SELECT * FROM user where id = ?";
@@ -310,11 +310,10 @@ router.get('/', function(req, res){
             'name': obj.name,
             'birth' : parseInt(obj.birth._hex,16),
             'kind' : obj.kind,
-            'gender' : parseInt(obj.gender._hex, 16),
+            'gender' : parseInt(obj.gender._hex, 16) == 1 ? "남성" : "여성",
             'donateDate' : parseInt(obj.gender._hex,16),
             'id': id});
         } 
-        console.log(results);
         res.render('index', {
           list: results,
           name: user.name,

@@ -1,9 +1,282 @@
+const abi = [
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_to",
+				"type": "address"
+			},
+			{
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "approve",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_donateDate",
+				"type": "uint256"
+			},
+			{
+				"name": "_birth",
+				"type": "uint256"
+			},
+			{
+				"name": "_gender",
+				"type": "uint256"
+			},
+			{
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"name": "_kind",
+				"type": "string"
+			}
+		],
+		"name": "createCert",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "takeOwnership",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_to",
+				"type": "address"
+			},
+			{
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "transfer",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"name": "_from",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"name": "_to",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "Transfer",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"name": "_owner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"name": "_approved",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "Approval",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"name": "birth",
+				"type": "uint256"
+			}
+		],
+		"name": "CertCreated",
+		"type": "event"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_owner",
+				"type": "address"
+			}
+		],
+		"name": "balanceOf",
+		"outputs": [
+			{
+				"name": "_balance",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "BloodCerts",
+		"outputs": [
+			{
+				"name": "donateDate",
+				"type": "uint256"
+			},
+			{
+				"name": "birth",
+				"type": "uint256"
+			},
+			{
+				"name": "gender",
+				"type": "uint256"
+			},
+			{
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"name": "kind",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "certToOwner",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_owner",
+				"type": "address"
+			}
+		],
+		"name": "getCertByOwner",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "ownerCertCount",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "ownerOf",
+		"outputs": [
+			{
+				"name": "_owner",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
 const express = require("express");
 const router = express.Router();
 const db = require('../db/connector.js');
 const crypto = require('crypto');
 const Web3 = require('web3');
-const web3 = new Web3('http://layer7.kr:11606');
+const web3 = new Web3('http://127.0.0.1:7545');
 
 router.get('/loginpage', function(req, res){
   res.render('login', {
@@ -25,23 +298,30 @@ router.get('/certreg',function(req, res){
 router.post('/certreg', function(req, res){
   let name = req.body.id;
   let type = req.body.type;
-
+  let address = '0x3925fa618b4df1102f2ca1bf2670851bbb2fe472'
+  let contract = new web3.eth.Contract(abi, address);
   const selectQuery = "SELECT * FROM user where id = ?";
   console.log("[certreg]");
+  var date = new Date();
+  var sex = 0;
+  var birth = 0;
+  var from = "";
   db.query(selectQuery, [name], function(err, result){
+    console.log(result[0]);
     let val = result[0].resident;
+    from = result[0].ethwallet;
     var value = val.toString();
     if(value.length == 7){
-      let sex = value.substr(6,1);
-      let birth = value.substr(0,6);
-      let date = + new Date();
-      console.log(name + '\n' + type + '\n' + sex + '\n' + birth + '\n' + date);
+      sex = value.substr(6,1);
+      birth = value.substr(0,6);
     }else{
-      let sex = value.substr(5,1);
-      let birth = value.substr(0,5);
-      let date = + new Date();
-      console.log(name + '\n' + type + '\n' + sex + '\n' + birth + '\n' + date);
+      sex = value.substr(5,1);
+      birth = value.substr(0,5);
     }
+    console.log(name + '\n' + type + '\n' + sex + '\n' + birth + '\n' + date.getTime());
+    console.log(from);
+    contract.methods.createCert(date.getTime(),birth, sex,name,type).send({from: from, gas: 210000 })
+      .then(res.redirect('/certreg'));
   });
 });
 
