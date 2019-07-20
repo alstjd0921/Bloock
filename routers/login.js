@@ -277,7 +277,7 @@ const db = require('../db/connector.js');
 const crypto = require('crypto');
 const Web3 = require('web3');
 const web3 = new Web3('http://127.0.0.1:7545');
-
+const address = '0x3925fa618b4df1102f2ca1bf2670851bbb2fe472'
 router.get('/loginpage', function(req, res){
   res.render('login', {
   });
@@ -298,7 +298,7 @@ router.get('/certreg',function(req, res){
 router.post('/certreg', function(req, res){
   let name = req.body.id;
   let type = req.body.type;
-  let address = '0x3925fa618b4df1102f2ca1bf2670851bbb2fe472'
+  //let address = '0x3925fa618b4df1102f2ca1bf2670851bbb2fe472'
   let contract = new web3.eth.Contract(abi, address);
   const selectQuery = "SELECT * FROM user where id = ?";
   console.log("[certreg]");
@@ -322,6 +322,31 @@ router.post('/certreg', function(req, res){
     console.log(from);
     contract.methods.createCert(date.getTime(),birth, sex,name,type).send({from: from, gas: 210000 })
       .then(res.redirect('/certreg'));
+  });
+});
+
+router.post('/donate', function(req,res) {
+  const bokdong_wallet = '0xe5F061C86628c843009E9321514372b897fbEF4b';
+  let user = req.session.user;
+  if(user == undefined){
+    res.redirect('/');
+  }
+  const amount = req.body.amount;
+  const selectQuery = "SELECT * FROM user where id = ?";
+  let contract = new web3.eth.Contract(abi, address);
+  db.query(selectQuery, [user.id], function(err, result){
+    async function transferdata() {
+      let indices = await contract.methods.getCertByOwner(result[0].ethwallet).call();
+      let from = result[0].ethwallet;
+      for(var i = 0; i < amount; i++) {
+        console.log(i);
+        let id = parseInt(indices[i]._hex,16);
+        contract.methods.transfer(bokdong_wallet,id).send({from: from, gas: 210000 });
+      } 
+      
+    }
+    transferdata();
+    res.redirect('/');
   });
 });
 

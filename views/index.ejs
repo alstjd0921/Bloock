@@ -315,12 +315,12 @@
         <div class="modal-content">
             <span class="close">&times;</span>
                 <h1>정말로 기부하시겠습니까?</h1>
-                <form action="" method="POST">
+                <form action="/donate" method="POST">
                 <p>
                     기부할 헌혈증의 개수를 입력하세요
                 </p>
                 <div class="md-form-control">
-                    <input id="aaaaaaaaaaaaa" name="aaaaaaaaaaaaa" type="number" class="md-input-text" max="<%= list.length %>"/>
+                    <input id="aaaaaaaaaaaaa" name="amount" type="number" class="md-input-text" max="<%= list.length %>"/>
                     <label for="aaaaaaaaaaaaa">개수</label>
                     <span class="md-input-text-bar"></span>
                 </div>
